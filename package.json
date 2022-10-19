@@ -11,5 +11,23 @@
   },
   "devDependencies": {
     "eslint": "^8.25.0"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "time-2-work",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bsolis6878/time-2-work.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bsolis6878/time-2-work/issues"
+  },
+  "homepage": "https://github.com/bsolis6878/time-2-work#readme"
 }
