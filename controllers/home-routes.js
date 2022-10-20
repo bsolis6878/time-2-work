@@ -26,7 +26,7 @@ router.get('/entrepreneur', (req, res) => {
 });
 
 // renders team lead page
-router.get('/team-lead', (res, res) => {
+router.get('/team-lead', (req, res) => {
     res.render('team-lead')
 });
 
