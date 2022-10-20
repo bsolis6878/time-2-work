@@ -14,7 +14,10 @@ router.get('/signup', (req, res) => {
 router.get('/login', (req, res) => {
     res.render('login');
 });
-
+// renders create page
+router.get('/create', (req, res) => {
+    res.render('create');
+});
 // renders employee page
 router.get('/employee', (req, res) => {
     res.render('employee');
