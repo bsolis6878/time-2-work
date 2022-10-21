@@ -38,6 +38,18 @@ User.init(
         len: [4],
       },
     },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    addr1: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    phone_number: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   },
   {
     hooks: {

@@ -36,10 +36,21 @@ router.get("/:id", (req, res) => {
 
 // create user accounts
 router.post("/", (req, res) => {
+  // expects { "username": "left_twix99",
+  //           "email": "leftyisbesty@gmail.com",
+  //           "password": "righttwixsucks11$!",
+  //           "name": "Star Skittles",
+  //           "addr1": "106 Broadway, San Antonio TX 78254",
+  //           "phone_number": "555-555-5555",
+  //           "tax_id": "123-45-6005" }
+
   User.create({
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
+    name: req.body.name,
+    addr1: req.body.addr1,
+    phone_number: req.body.phone_number,
   })
     .then((dbUserData) => res.json(dbUserData))
     .catch((err) => {
