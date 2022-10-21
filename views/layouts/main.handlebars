@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./node_modules/bulma/css/bulma-rtl.min.css">
+  <link rel="stylesheet">
   <title>Time 2 Work</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
@@ -12,15 +12,16 @@
 <body>
   <div>
     <header>
-      <h1 class="has-text-black has-text-centered">
+      <h1 class="title">
         <a href="/" >Time 2 Work</a>
       </h1>
-      <nav>
+      <nav class="nav">
         <a href="/">Home</a>
         {{#if loggedIn}}
         <button id="logout" class="btn-no-style">logout</button>
         {{else}}
         <a href="/login">login</a>
+        <a href="/signup">Sign up</a>
         {{/if}}
       </nav>
     </header>
