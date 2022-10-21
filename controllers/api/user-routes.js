@@ -52,7 +52,16 @@ router.post("/", (req, res) => {
     addr1: req.body.addr1,
     phone_number: req.body.phone_number,
   })
-    .then((dbUserData) => res.json(dbUserData))
+    .then((dbUserData) => {
+      // creates session using cookies upon account creation
+      req.session.save(() => {
+        req.session.user_id = dbUserData.id;
+        req.session.username = dbUserData.username;
+        req.session.loggedIn = true;
+
+        res.json(dbUserData);
+    });
+    })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
@@ -78,7 +87,14 @@ router.post("/login", (req, res) => {
       return;
     }
 
-    res.json({ user: dbUserData, message: "You are now logged in!" });
+    // creates cookie session when logging in
+    req.session.save(() => {
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username;
+      req.session.loggedIn = true;
+
+      res.json({ user: dbUserData, message: 'You are now logged in!' });
+  });
   });
 });
 

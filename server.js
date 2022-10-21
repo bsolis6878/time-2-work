@@ -20,10 +20,10 @@ app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
 // enable session cookies
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 const sess = {
-    secret: 'Super secret secret',
+    secret: "Super secret secret",
     cookie: {},
     resave: false,
     saveUninitialized: true,
