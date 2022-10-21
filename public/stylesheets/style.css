@@ -8,4 +8,70 @@ body, html {
     margin: 0;
     font-family: sans-serif;
     color: cornflowerblue;
+    background-image: url("../images/money.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  
 }
+
+.title {
+    margin: auto;
+    width: 50%;
+    border: 3px ;
+    padding: 30px;
+    text-align: center;
+    font-size: 55px;
+
+}
+
+a {
+    color: cornflowerblue;
+    text-decoration: none;
+
+}
+
+a:hover {
+    color: green;
+}
+
+textarea, input {
+    padding: .5%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 25px;
+  }
+  
+  .signup-form {
+    margin: 5px;;
+    width: 10%;
+    border: 15px ;
+    padding: 10px;
+    font-size: 25px;
+    
+  }
+
+  nav {
+    padding: 2%;
+    font-size: 25px;
+  }
+
+  .submit {
+    border-radius: 8px;
+    font-size: 20px;
+    color: black;
+    background-color: greenyellow;
+  }
+  
+  .login-form {
+    margin: 5px;;
+    width: 10%;
+    border: 15px ;
+    padding: 10px;
+    font-size: 25px;
+  }
+
+  footer {
+    font-size: 25px;
+    padding: 2.5%;
+  }
+  
