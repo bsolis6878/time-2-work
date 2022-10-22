@@ -47,8 +47,20 @@ User.init(
       allowNull: false,
     },
     phone_number: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
+      validate: {
+        len: [10],
+        isNumeric: true,
+      },
+    },
+    tax_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        len: [9],
+        isNumeric: true,
+      },
     },
   },
   {
