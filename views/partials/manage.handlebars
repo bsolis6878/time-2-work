@@ -1,0 +1,28 @@
+<table class="user-table">
+    <thred>
+       <th>#</th>
+       <th>Username</th>
+       <th>Email</th>
+       <th>Name</th>
+       <th>Address</th>
+       <th>Phone</th>
+    </thred>
+
+<tbody>
+{{#each users}}
+<tr>
+    <th>{{this.id}}</th>
+    <td>{{this.username}}</td>
+    <td>{{this.email}}</td>
+    <td>{{this.name}}</td>
+    <td>{{this.addr1}}</td>
+    <td>{{this.phone_number}}</td>
+    <td>
+        <a href="#" type="button">View</a>
+        <a href="#" type="button">Edit</a>
+        <a href="#" type="button">Fire</a>
+    </td>
+</tr>
+{{/each}}
+</tbody>
+</table>
