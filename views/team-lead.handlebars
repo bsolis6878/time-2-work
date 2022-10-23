@@ -4,8 +4,32 @@
 
 <div class="company"></div>
 
-<div role="team-lead">Role:</div>
+<div role="team-lead">Role: Team Leader</div>
 
 <div class="manage-hours"></div>
 
-<div class="manage-employees"></div>
+<div class="manage-employees">
+    <table class="user-table">
+    <thred>
+       <th>#</th>
+       <th>Username</th>
+       <th>Email</th>
+       <th>Name</th>
+       <th>Address</th>
+       <th>Phone</th>
+    </thred>
+
+<tbody>
+{{#each users}}
+<tr>
+    <th>{{this.id}}</th>
+    <td>{{this.username}}</td>
+    <td>{{this.email}}</td>
+    <td>{{this.name}}</td>
+    <td>{{this.addr1}}</td>
+    <td>{{this.phone_number}}</td>
+</tr>
+{{/each}}
+</tbody>
+</table>
+</div>

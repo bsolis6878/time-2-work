@@ -35,7 +35,34 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
+        isAlpha: true,
+      },
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
         len: [4],
+      },
+    },
+    addr1: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    phone_number: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        len: [10],
+        isNumeric: true,
+      },
+    },
+    tax_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        len: [9],
+        isNumeric: true,
       },
     },
   },
