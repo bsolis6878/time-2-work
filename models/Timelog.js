@@ -13,6 +13,14 @@ Timelog.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    company_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "company",
+        key: "id",
+      },
+    },
     employee_id: {
       type: DataTypes.INTEGER,
       allowNull: false,

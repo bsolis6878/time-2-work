@@ -35,12 +35,15 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [4],
+        isAlpha: true,
       },
     },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        len: [4],
+      },
     },
     addr1: {
       type: DataTypes.STRING,
