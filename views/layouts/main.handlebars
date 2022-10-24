@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet">
   <title>Time 2 Work</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
@@ -15,14 +16,24 @@
       <h1 class="title">
         <a href="/" >Time 2 Work</a>
       </h1>
-      <nav class="nav">
+      <nav class="nav" class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+               <a class="navbar-item">
         <a href="/">Home</a>
+               </a>
         {{#if loggedIn}}
         <button id="logout" class="btn-no-style">logout</button>
         {{else}}
+        <a class="navbar-item">
         <a href="/login">login</a>
+        </a>
+        <a class="navbar-item">
         <a href="/signup">Sign up</a>
+        </a>
         {{/if}}
+        </div>
       </nav>
     </header>
     <main>
