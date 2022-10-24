@@ -1,11 +1,5 @@
 // import all models
-<<<<<<< HEAD
-const User = require("./User");
 const Company = require("./Company");
-const Role = require("./Role");
-=======
-const Company = require("./Company");
->>>>>>> 70108e87e17e069cc05aa7e1253e68c44c5be45b
 const Employee = require("./Employee");
 const Job = require("./Job");
 const Role = require("./Role");
