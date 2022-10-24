@@ -21,14 +21,6 @@ Employee.init(
         key: "id",
       },
     },
-    user_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: "user",
-        key: "id",
-      },
-    },
     role_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -44,6 +36,18 @@ Employee.init(
         model: "employee",
         key: "id",
       },
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "user",
+        key: "id",
+      },
+    },
+    employee_id: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
   },
   {

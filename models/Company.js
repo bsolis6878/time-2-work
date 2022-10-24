@@ -25,7 +25,7 @@ Company.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
-        len: [9],
+        len: [10],
         isNumeric: true,
       },
     },

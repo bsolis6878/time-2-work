@@ -1,11 +1,11 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-// create our Job model
-class Job extends Model {}
+// create our Timelog model
+class Timelog extends Model {}
 
-// create fields/columns for Job model
-Job.init(
+// create fields/columns for Timelog model
+Timelog.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -21,11 +21,23 @@ Job.init(
         key: "id",
       },
     },
-    job: {
-      type: DataTypes.STRING,
+    employee_id: {
+      type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: "employee",
+        key: "id",
+      },
     },
-    hourly_rate: {
+    job_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "job",
+        key: "id",
+      },
+    },
+    hours_worked: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
     },
@@ -35,8 +47,8 @@ Job.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "job",
+    modelName: "timelog",
   }
 );
 
-module.exports = Job;
+module.exports = Timelog;
