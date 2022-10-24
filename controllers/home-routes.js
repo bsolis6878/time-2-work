@@ -68,33 +68,7 @@ router.get("/manage", (req, res) => {
 });
 
 router.get('/edit/:id', (req, res) => {
-  User.findByPk(req.params.id, {
-    attributes: [
-      'username',
-      'email',
-      'password',
-      'name',
-      'addr1',
-      'phone_number',
-      'tax_id'
-      
-    ],
-  })
-    .then(dbUserData => {
-      if (dbUserData) {
-        const user = dbUserData.get({ plain: true });
-        
-        res.render('edit', {
-          user,
-          loggedIn: true
-        });
-      } else {
-        res.status(404).end();
-      }
-    })
-    .catch(err => {
-      res.status(500).json(err);
-    });
+ res.render('edit');
    });
 
 
