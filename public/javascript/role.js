@@ -1,12 +1,15 @@
-/*async function newFormHandler(event) {
+async function newRoleHandler(event) {
     event.preventDefault();
   
-    const role = document.querySelector('input[name="roles-role"]').value;
+    const role = document.querySelector('input[name="roles-input"]').value;
+    const company = document.querySelector('input[name="companyID-input"]').value;
   
     const response = await fetch(`/api/roles`, {
       method: 'POST',
       body: JSON.stringify({
-        role
+       company,
+       role
+        
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -20,4 +23,4 @@
     }
   }
   
-  document.querySelector('.role-form').addEventListener('submit', newFormHandler);*/
+  document.querySelector('.role-form').addEventListener('submit', newRoleHandler);

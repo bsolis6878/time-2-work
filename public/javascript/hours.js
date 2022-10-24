@@ -1,9 +1,9 @@
 async function newJobHandler(event) {
     event.preventDefault();
   
-    const role = document.querySelector('input[name="job-input"]').value;
+    const role = document.querySelector('input[name="hours-input"]').value;
   
-    const response = await fetch(`/api/roles`, {
+    const response = await fetch(`/api/hours`, {
       method: 'POST',
       body: JSON.stringify({
         job

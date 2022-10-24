@@ -1,21 +1,111 @@
 const router = require("express").Router();
-const { Employee } = require("../models");
+const { Employee, User } = require("../models");
 
 // render homepage
-router.get("/", (req, res) => {
-    res.render("homepage");
-});
+
+router.get('/', (req, res) => {
+    console.log('======================');
+    User.findAll({
+      attributes: [
+        'id',
+        'username',
+        'email'
+      ],
+  
+    })
+      .then(dbUserData => {
+        const user = dbUserData.map(user => user.get({ plain: true }));
+        
+        res.render('homepage', {
+          user,
+          loggedIn: req.session.loggedIn,
+          name: req.session.username
+         
+        });
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
 
 // renders signup page
 router.get("/signup", (req, res) => {
     res.render("signup");
 });
 
-// renders login page
-router.get("/login", (req, res) => {
-    res.render("login");
+router.get("/manage", (req, res) => {
+    console.log('======================');
+    User.findAll({
+      attributes: [
+        'id',
+        'username',
+        'email',
+        'password',
+        'name',
+        'addr1',
+        'phone_number',
+        'tax_id'
+
+      ],
+  
+    })
+      .then(dbUserData => {
+        const user = dbUserData.map(user => user.get({ plain: true }));
+        
+        res.render("manage", {
+          user,
+          loggedIn: req.session.loggedIn,
+          name: req.session.username
+         
+        });
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+    
 });
 
+router.get('/edit/:id', (req, res) => {
+  User.findByPk(req.params.id, {
+    attributes: [
+      'username',
+      'email',
+      'password',
+      'name',
+      'addr1',
+      'phone_number',
+      'tax_id'
+      
+    ],
+  })
+    .then(dbUserData => {
+      if (dbUserData) {
+        const user = dbUserData.get({ plain: true });
+        
+        res.render('edit', {
+          user,
+          loggedIn: true
+        });
+      } else {
+        res.status(404).end();
+      }
+    })
+    .catch(err => {
+      res.status(500).json(err);
+    });
+   });
+
+
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
+  
+    res.render('login');
+  });
 // renders employee page
 router.get("/employee", (req, res) => {
     res.render("employee");

@@ -51,6 +51,7 @@ router.post("/", (req, res) => {
     name: req.body.name,
     addr1: req.body.addr1,
     phone_number: req.body.phone_number,
+    tax_id: req.body.tax_id
   })
     .then((dbUserData) => {
       // creates session using cookies upon account creation
@@ -101,8 +102,17 @@ router.post("/login", (req, res) => {
 // update user route
 router.put("/:id", (req, res) => {
   // pass in req.body instead to only update what's passed through
-  User.update(req.body, {
-    individualHooks: true,
+  User.update( 
+   {
+    username: req.body.username,
+    email: req.body.email,
+    password: req.body.password,
+    name: req.body.name,
+    address: req.body.addr1,
+    phone: req.body.phone_number,
+    tax_id: req.body.tax_id
+   },
+   {
     where: {
       id: req.params.id,
     },
@@ -139,5 +149,21 @@ router.delete("/:id", (req, res) => {
       res.status(500).json(err);
     });
 });
+
+
+router.post('/logout', (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  }
+  else {
+    res.status(404).end();
+  }
+});
+
+router.put = (req, res) => {
+  res
+}
 
 module.exports = router;
