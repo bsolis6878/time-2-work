@@ -71,7 +71,7 @@ router.put("/:id", (req, res) => {
   });
 
 // delete timelog
-Timelog.delete("/:id", (req, res) => {
+router.delete("/:id", (req, res) => {
     Timelog.destroy({
       where: {
         id: req.params.id,

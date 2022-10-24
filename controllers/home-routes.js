@@ -59,4 +59,29 @@ router.get("/team-lead", (req, res) => {
         });
 });
 
+// renders addjobs page
+router.get("/addjobs", (req, res) => {
+    res.render("addjobs");
+});
+
+// renders addrole page
+router.get("/addrole", (req, res) => {
+    res.render("addrole");
+});
+
+// renders manage page
+router.get("/manage", (req, res) => {
+    res.render("manage");
+});
+
+// renders paycheck page
+router.get("/paycheck", (req, res) => {
+    res.render("paycheck");
+});
+
+// renders task page
+router.get("/task", (req, res) => {
+    res.render("task");
+});
+
 module.exports = router;
