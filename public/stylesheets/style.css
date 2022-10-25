@@ -96,7 +96,7 @@ textarea, input {
     
   }
 
-  .login-form, .job-form {
+  .login-form, .job-form, .role-form {
     position: absolute;
     right: 0px;
     width: 300px;
