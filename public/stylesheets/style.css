@@ -16,10 +16,13 @@ body, html {
     background-image:linear-gradient(rgba(183, 173, 173, 0.5), rgba(228, 211, 211, 0.5)),url(../images/run.avif);
     background-repeat: no-repeat;
     background-size: cover;
-   
-  
+    font-family: 'Cabin', sans-serif;
 }
 
+/* .navbar-item {
+  font-family: 'Cabin', sans-serif;
+
+} */
 
 
 
