@@ -9,7 +9,7 @@
     </thred>
 
 <tbody>
-{{#each users}}
+{{#each user}}
 <tr>
     <th>{{this.id}}</th>
     <td>{{this.username}}</td>
@@ -19,7 +19,7 @@
     <td>{{this.phone_number}}</td>
     <td>
         <a href="#" type="button">View</a>
-        <a href="#" type="button">Edit</a>
+        <a href="edit/{{this.id}}" type="button">Edit</a>
         <a href="#" type="button">Fire</a>
     </td>
 </tr>

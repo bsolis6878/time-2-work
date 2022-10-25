@@ -7,8 +7,9 @@
     const name = document.querySelector('#name-signup').value.trim();
     const addr1 = document.querySelector('#address-signup').value.trim();
     const phone_number = document.querySelector('#phone-signup').value.trim();
+    const tax_id = document.querySelector('#tax-signup').value.trim();
   
-    if (username && email && password) {
+    if (username && email && password && name && addr1 && phone_number && tax_id) {
       const response = await fetch('/api/users', {
         method: 'post',
         body: JSON.stringify({
@@ -17,7 +18,8 @@
           password,
           name,
           addr1,
-          phone_number
+          phone_number,
+          tax_id
         }),
         headers: { 'Content-Type': 'application/json' }
       });
