@@ -2,19 +2,26 @@
     box-sizing: border-box;
 }
 
+
 body, html {
     height: 100%;
     padding: 0;
     margin: 0;
     font-family: sans-serif;
-    color: cornflowerblue;
-    background-image: url("../images/money.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 100%;
-    
+    color: black;
   
 }
+
+.header-image {
+ 
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+}
+
 
 .title {
     margin: auto;
@@ -27,7 +34,7 @@ body, html {
 }
 
 a {
-    color: cornflowerblue;
+    color: black;
     text-decoration: none;
 
 }
@@ -88,7 +95,10 @@ textarea, input {
 }
 
 @media screen and (max-width: 768px) {
-
+  body, html {
+ 
+ 
+  }
 }
 
 @media screen and (max-width:575px) {
