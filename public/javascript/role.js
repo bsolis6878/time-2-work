@@ -1,14 +1,13 @@
 async function newRoleHandler(event) {
     event.preventDefault();
   
-    const role = document.querySelector('input[name="roles-input"]').value;
-    const company = document.querySelector('input[name="companyID-input"]').value;
-  
+    const companyID = document.querySelector('#company-ID').value.trim();
+    const roleName = document.querySelector('#role-name').value.trim();
     const response = await fetch(`/api/roles`, {
       method: 'POST',
       body: JSON.stringify({
-       company,
-       role
+       companyID,
+       roleName
         
       }),
       headers: {

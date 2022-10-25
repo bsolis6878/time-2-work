@@ -147,5 +147,14 @@ router.get("/paycheck", (req, res) => {
 router.get("/task", (req, res) => {
     res.render("task");
 });
+//renders add company page
+router.get("/addcompany", (req, res) => {
+  res.render("addcompany");
+});
+
+//renders add employee page
+router.get("/addemployee", (req, res) => {
+  res.render("addemployee");
+});
 
 module.exports = router;
