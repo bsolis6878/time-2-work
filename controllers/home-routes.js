@@ -11,15 +11,28 @@ router.get('/', (req, res) => {
         'username',
         'email'
       ],
+      include: [
+        {
+          model: Employee,
+          attributes: ['id', 'company_id', 'role_id', 'manager_id', 'user_id'],
+          include: {
+            model: User,
+            attributes: ['username']
+          }
+        },
+      ]
   
     })
       .then(dbUserData => {
         const user = dbUserData.map(user => user.get({ plain: true }));
+        const employee = dbUserData.map(employee => employee.get({ plain: true }));
         
         res.render('homepage', {
           user,
+          employee,
           loggedIn: req.session.loggedIn,
-          name: req.session.username
+          name: req.session.username,
+          role: req.session.role
          
         });
       })
@@ -48,17 +61,29 @@ router.get("/manage", (req, res) => {
         'tax_id'
 
       ],
+      include: [
+        {
+          model: Employee,
+          attributes: ['id', 'company_id', 'role_id', 'manager_id', 'user_id'],
+          include: {
+            model: User,
+            attributes: ['username']
+          }
+        },
+      ]
   
     })
       .then(dbUserData => {
         const user = dbUserData.map(user => user.get({ plain: true }));
+        const employee = dbUserData.map(employee => employee.get({ plain: true }));
         
         res.render("manage", {
           user,
+          employee,
           loggedIn: req.session.loggedIn,
-          name: req.session.username
-         
-        });
+          name: req.session.username,
+          
+        })
       })
       .catch(err => {
         console.log(err);
@@ -145,6 +170,7 @@ router.get("/paycheck", (req, res) => {
 
 // renders task page
 router.get("/task", (req, res) => {
+  
     res.render("task");
 });
 //renders add company page

@@ -5,8 +5,13 @@
 </div>
 <form class="jobs">
     <h1>Jobs you completed today</h1>
+    <div>
     <label for="job-input">Job you completed:</label>
-    <input type="text" id="job-input" />  
+    <select  id="job-input" />  </select>
+    {{#each}}
+    <option></option>
+    {{/each}}
+    </div>
     <label for="hours-input">Hours:</label>   
     <input type="text" id="hours-input" /> 
     <label for="minutes-input">Minutes:</label>

@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User, Employee, Role, Company } = require("../../models");
 
 // get all users
 router.get("/", (req, res) => {
@@ -51,8 +51,27 @@ router.post("/", (req, res) => {
     name: req.body.name,
     addr1: req.body.addr1,
     phone_number: req.body.phone_number,
-    tax_id: req.body.tax_id
-  })
+    tax_id: req.body.tax_id,
+  
+  include: [
+    {
+      model: Employee,
+      attributes: ['id', 'company_id', 'role_id', 'manager_id','user_id'],
+      include: {
+        model: User,
+        attributes: ['username']
+      },
+      include: {
+        model: Role,
+        attributes: ['role_name']
+      },
+      include: {
+        model: Company,
+        attributes: ['name']
+      }
+    },
+  ],
+})
     .then((dbUserData) => {
       // creates session using cookies upon account creation
       req.session.save(() => {
@@ -72,6 +91,24 @@ router.post("/", (req, res) => {
 // login route
 router.post("/login", (req, res) => {
   User.findOne({
+    include: [
+      {
+        model: Employee,
+        attributes: ['id', 'company_id', 'role_id', 'manager_id','user_id'],
+        include: {
+          model: User,
+          attributes: ['username']
+        },
+        include: {
+          model: Role,
+          attributes: ['role_name']
+        },
+        include: {
+          model: Company,
+          attributes: ['name']
+        }
+      },
+    ],
     where: {
       email: req.body.email,
     },
@@ -82,6 +119,7 @@ router.post("/login", (req, res) => {
     }
 
     const validPassword = dbUserData.checkPassword(req.body.password);
+    
 
     if (!validPassword) {
       res.status(400).json({ message: "Incorrect password!" });
@@ -92,7 +130,10 @@ router.post("/login", (req, res) => {
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
       req.session.username = dbUserData.username;
+      req.session.role = dbUserData.employees[0].role_id;
+      //req.session.company = dbUserData.employee.dataValues.company_id;
       req.session.loggedIn = true;
+      console.log(dbUserData.employees[0].id);
 
       res.json({ user: dbUserData, message: 'You are now logged in!' });
   });

@@ -1,7 +1,7 @@
 async function newCompanyHandler(event) {
     event.preventDefault();
   
-    const name = document.querySelector('#companyName-input').value.trim();
+    const name = document.querySelector('#companyName-select').value.trim();
     const addr1 = document.querySelector('#addressCompany-input').value.trim();
     const phone_number = document.querySelector('#companyNumber-input').value.trim();
     const tax_id = document.querySelector('#companyTax-input').value.trim();

@@ -1,25 +1,25 @@
 async function signupFormHandler(event) {
     event.preventDefault();
   
-    const companyID = document.querySelector('#company-input').value.trim();
-    const roleID = document.querySelector('#roleID-input').value.trim();
-    const managerID = document.querySelector('#manager-input').value.trim();
-    const userID = document.querySelector('#userID-input').value.trim();
-    const employeeID = document.querySelector('#employee-input').value.trim();
+    const company_id = document.querySelector('#company-input').value.trim();
+    const role_id = document.querySelector('#roleID-input').value.trim();
+    const manager_id = document.querySelector('#manager-input').value.trim();
+    const user_id = document.querySelector('#userID-input').value.trim();
   
-    if ( companyID && roleID && managerID && userID && employeeID) {
+    if ( company_id && role_id && manager_id && user_id) {
       const response = await fetch('/api/employees', {
-        method: 'post',
+        method: 'POST',
         body: JSON.stringify({
-            companyID,
-            roleID,
-            managerID,
-            userID,
-            employeeID
+            company_id,
+            user_id,
+            role_id,
+            manager_id
+            
+            
         }),
         headers: { 'Content-Type': 'application/json' }
       });
-  
+   
       if (response.ok) {
         document.location.replace('/');
       } else {
