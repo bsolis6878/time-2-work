@@ -6,29 +6,109 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet">
   <title>Time 2 Work</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="">
+  <nav class="navbar has-background-info-light" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+    <h1 class="is-size-2 pl-4">Time 2 Work</h1>
+    </a>
+
+    <a role="button" class="navbar-burger " aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      
+
+      {{!-- <a class="navbar-item">
+        Documentation
+      </a> --}}
+
+      {{!-- <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            About
+          </a>
+          <a class="navbar-item">
+            Jobs
+          </a>
+          <a class="navbar-item">
+            Contact
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item">
+            Report an issue
+          </a>
+        </div>
+      </div> --}}
+    </div>
+
+    <div class="navbar-end">
+      <a href="/" class="navbar-item">
+        Home</a>
+      </a>
+      {{#if loggedIn}}
+       <button id="logout" class="button is-black">logout</button>
+       {{else}}
+      <div class="navbar-item">
+        <div class="buttons">
+          <a href="/signup" class="button is-dark">
+            <strong>Sign up</strong> </a>
+          </a>
+          <a href="/login" class="button is-dark">
+            Log in </a>
+          </a>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
   <div>
-    <header>
+    {{!-- <header class="header-image">
       <h1 class="title">
         <a href="/" >Time 2 Work</a>
+        
       </h1>
-      <nav class="nav">
+    <nav class="nav is-size-6-mobile" class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <div id="navbarBasicExample" class="navbar-menu is-active">
+            <div class="navbar-start">
+               <a class="navbar-item">
         <a href="/">Home</a>
+               </a>
         {{#if loggedIn}}
-        <button id="logout" class="btn-no-style">logout</button>
+        <button id="logout" class="button is-black">logout</button>
         {{else}}
+        <a class="navbar-item">
         <a href="/login">login</a>
+        </a>
+        <a class="navbar-item">
         <a href="/signup">Sign up</a>
+        </a>
         {{/if}}
+        </div>
       </nav>
-    </header>
+    </header> --}}
     <main>
       {{{ body }}}
     </main>
-    <footer>
+    <footer class="is-size-6-mobile">
       Welcome To Time 2 Work Enjoy Your Stay!
     </footer>
   </div>

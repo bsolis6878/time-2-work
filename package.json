@@ -14,7 +14,8 @@
     "eslint": "^8.25.0"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "seed":"node seeds/index.js"
   },
   "name": "time-2-work",
   "description": "",
