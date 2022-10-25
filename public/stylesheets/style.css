@@ -9,18 +9,14 @@ body, html {
     margin: 0;
     font-family: sans-serif;
     color: black;
+    background-image:linear-gradient(rgba(183, 173, 173, 0.5), rgba(228, 211, 211, 0.5)),url(../images/run.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+   
   
 }
 
-.header-image {
- 
-  height: 50%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
 
-}
 
 
 .title {
@@ -30,6 +26,7 @@ body, html {
     padding: 30px;
     text-align: center;
     font-size: 55px;
+    
 
 }
 
@@ -51,11 +48,16 @@ textarea, input {
   }
   
   .signup-form {
-    margin: 5px;;
-    width: 10%;
+    text-align: center;
     border: 15px ;
     padding: 10px;
-    font-size: 25px;
+    font-size: 23px;
+    position: absolute;
+    width: 250px;
+    padding: 10px;
+    margin: 0;
+    top: 40%;
+    right: 5%
     
   }
 
@@ -74,13 +76,7 @@ textarea, input {
     background-color: greenyellow;
   }
   
-  .login-form {
-    margin: 5px;;
-    width: 10%;
-    border: 15px ;
-    padding: 10px;
-    font-size: 25px;
-  }
+ 
 
   footer {
     font-size: 25px;
@@ -107,7 +103,17 @@ textarea, input {
     padding: 10px;
     margin: 0;
     top: 40%;
+    border: 15px;
+    font-size: 25px;
+    text-align: center;
     
+  }
+
+  .signed-in {
+    font-family: sans-serif;
+    color: black;
+    font-size: 23px;
+
   }
 
 /* media quiries */
