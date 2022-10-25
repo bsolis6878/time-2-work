@@ -37,7 +37,7 @@ a {
 }
 
 a:hover {
-    color: green;
+    color: rgb(12, 13, 12);
 }
 
 textarea, input {
@@ -62,11 +62,11 @@ textarea, input {
   }
 
   nav {
-    padding: 2%;
+    padding: 0 0 0 15px;
     font-size: 25px;
     float: right;
     margin-top: 50px;
-    
+  
   }
 
   .submit {
@@ -96,7 +96,7 @@ textarea, input {
     
   }
 
-  .login-form {
+  .login-form, .job-form {
     position: absolute;
     right: 0px;
     width: 300px;
@@ -115,6 +115,7 @@ textarea, input {
     font-size: 23px;
 
   }
+  
 
 /* media quiries */
 
