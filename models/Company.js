@@ -22,16 +22,18 @@ Company.init(
       allowNull: false,
     },
     phone_number: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [10],
-        isNumeric: true,
-      },
+      // Had to change to string since 1. INT is not large enough, BIGINT is needed, 2. leading zeroes would be removed. Better to receive the formatted and controlled phone number from front end.
+      // validate: {
+      //   len: [10],
+      //   isNumeric: true,
+      // },
     },
     tax_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      // keeping as INTEGER. Input from user should be cleaned and stored as numeric. Output to user should add the hyphens. Format for user 000-00-0000. Format for company (EIN) 00-0000000.
       validate: {
         len: [9],
         isNumeric: true,

@@ -45,10 +45,12 @@ Employee.init(
         key: "id",
       },
     },
-    employee_id: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+    // Removing for now as we setup the MVP.
+    //This ID is meant as a company assigned ID. Some companies use initials like GGC, BKB, RKN. Some use employee numbers like 332245, 323425, 656333. The employer may add the company id that is in their format.
+    // employee_id: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
   },
   {
     sequelize,
