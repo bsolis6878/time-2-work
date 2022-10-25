@@ -64,6 +64,7 @@ textarea, input {
     font-size: 25px;
     float: right;
     margin-top: 50px;
+    
   }
 
   .submit {
@@ -83,9 +84,22 @@ textarea, input {
 
   footer {
     font-size: 25px;
-    padding-top: 170px;
+    position: absolute;
+    bottom: 0;
   }
   
+  .description {
+    margin: 0;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-size: 23px;
+    
+  }
+
 /* media quiries */
 
 @media screen and (max-width: 1700px) {
