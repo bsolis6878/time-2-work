@@ -40,7 +40,7 @@ a:hover {
     color: rgb(12, 13, 12);
 }
 
-textarea, input, .entrepreneur {
+textarea, input, .entrepreneur, .employee {
     padding: .5%;
     font-size: 25px;
   }
