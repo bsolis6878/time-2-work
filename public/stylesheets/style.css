@@ -40,10 +40,8 @@ a:hover {
     color: rgb(12, 13, 12);
 }
 
-textarea, input {
+textarea, input, .entrepreneur {
     padding: .5%;
-    border-radius: 5px;
-    border: 1px solid #ccc;
     font-size: 25px;
   }
   
