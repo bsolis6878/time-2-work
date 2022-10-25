@@ -26,3 +26,11 @@
 {{/each}}
 </tbody>
 </table>
+
+
+ <div>
+    {{#each user}}
+    <label for="role-input">employee:</label>
+    <select id="role-input" />{{this.username}} </select>
+    {{/each}}
+  </div>
