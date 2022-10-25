@@ -62,6 +62,8 @@ textarea, input {
   nav {
     padding: 2%;
     font-size: 25px;
+    float: right;
+    margin-top: 50px;
   }
 
   .submit {
