@@ -3,7 +3,7 @@
 <h1>Current Signed in as: {{name}}</h1>
 {{/if}}
 </div>
-<form class="jobs is-size-6-mobile">
+<form class="jobs-form is-size-6-mobile">
     <h1>Jobs you completed today</h1>
     <div>
     <label for="company_id">Company ID:</label>
@@ -11,21 +11,21 @@
   </div>
   <div>
     <label for="employee_id">Employee ID:</label>
-    <input name="email-edit" type="text" id="employee_id" readonly value="{{eid}}"/>
+    <input type="text" id="employee_id" readonly value="{{eid}}"/>
   </div>
    <div>
-    <label for="job-choice">Job Worked</label>
-    <select type="select" id="job-choice">
+    <label for="job-id">Job Worked</label>
+    <select class="job-id" type="select" id="job-id">
         {{#each job}}
-        <option data-id="{{this.id}}">
+        <option  data-id="{{this.id}}" value="{{this.id}}">
             {{this.job}}
         </option>
        {{/each}}
     </select>
   </div>
    <div>
-    <label for="email-edit">hours_worked</label>
-    <input  type="text" id="email-edit"/>
+    <label for="minutes-worked">Minutes Worked:</label>
+    <input  type="text" id="minutes-worked"/>
   </div>
   <div>    
     <button type="submit" class="button is-dark">Submit</button
@@ -33,4 +33,5 @@
 
 </form>
 
+<script src="/javascript/hours.js"></script>
 
