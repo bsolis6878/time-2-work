@@ -17,7 +17,7 @@ This application was created with the combined efforts of Gabriel Cordova (Yilad
 
 If you'd like to contribute to our app, create an issue for us to look into for future development!
 
-![](./website.jpg)</br>
+![](./website.jpeg)</br>
 
 Deployed application:</br>
 https://protected-taiga-76694.herokuapp.com/
