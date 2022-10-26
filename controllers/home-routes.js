@@ -1,5 +1,6 @@
 const router = require("express").Router();
-const { Employee, User, Timelog, Job } = require("../models");
+
+const { Employee, User, Timelog, Job, Role, Company } = require("../models");
 
 // render homepage
 
@@ -35,15 +36,14 @@ router.get('/', (req, res) => {
         else if (req.session.role === 3) {
           res.redirect('/employee')
         }else
-
+          
+        
         res.render('homepage', {
-          user,
-          employee,
           loggedIn: req.session.loggedIn,
           name: req.session.username,
-          role: req.session.role
-         
-        });
+          rid: req.session.role_id
+        })
+        
       })
       .catch(err => {
         console.log(err);
@@ -53,7 +53,29 @@ router.get('/', (req, res) => {
 
 // renders signup page
 router.get("/signup", (req, res) => {
-    res.render("signup");
+  Role.findAll({
+    attributes: ['id','role_name']
+  })
+  .then(dbUserData => {
+
+     const roles = dbUserData.map(roles => roles.get({ plain: true }));
+    
+  
+    
+    res.render("signup", {
+      roles,
+      loggedIn: req.session.loggedIn,
+      name: req.session.username,
+      user_id: req.session.user_id
+      
+    })
+
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+
 });
 
 router.get("/manage", (req, res) => {
@@ -73,19 +95,15 @@ router.get("/manage", (req, res) => {
       include: [
         {
           model: Employee,
-          attributes: ['id', 'company_id', 'role_id', 'manager_id', 'user_id'],
-          include: {
-            model: User,
-            attributes: ['username']
-          }
-        },
-      ]
+          attributes: ['id', 'company_id', 'role_id', 'manager_id', 'user_id']
+        }
+      ],
   
     })
       .then(dbUserData => {
         const user = dbUserData.map(user => user.get({ plain: true }));
         const employee = dbUserData.map(employee => employee.get({ plain: true }));
-        
+        const role = dbUserData.map(role => role.get({ plain: true }));
         res.render("manage", {
           user,
           employee,
@@ -100,6 +118,30 @@ router.get("/manage", (req, res) => {
       });
     
 });
+router.get('/setrole', (req, res) => {
+  Role.findAll({
+    attributes: ['id','role_name']
+  })
+  .then(dbUserData => {
+
+     const roles = dbUserData.map(roles => roles.get({ plain: true }));
+    
+  
+    
+    res.render("setrole", {
+      roles,
+      loggedIn: req.session.loggedIn,
+      name: req.session.username,
+      uid: req.session.user_id
+      
+    })
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+    });
+
 
 router.get('/edit/:id', (req, res) => {
  res.render('edit');
@@ -156,6 +198,7 @@ router.get("/team-lead", (req, res) => {
             res.status(500).json(err);
         });
 });
+
 
 // renders addjobs page
 router.get("/addjobs", (req, res) => {
