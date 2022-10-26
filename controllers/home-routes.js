@@ -26,7 +26,16 @@ router.get('/', (req, res) => {
       .then(dbUserData => {
         const user = dbUserData.map(user => user.get({ plain: true }));
         const employee = dbUserData.map(employee => employee.get({ plain: true }));
-        
+        if (req.session.role === 1) {
+          res.redirect('/entrepreneur')
+        }
+        else if (req.session.role === 2) {
+          res.redirect('/team-lead')
+        }
+        else if (req.session.role === 3) {
+          res.redirect('/employee')
+        }else
+
         res.render('homepage', {
           user,
           employee,
@@ -99,7 +108,7 @@ router.get('/edit/:id', (req, res) => {
 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
-      res.redirect('/');
+     res.redirect('/');
       return;
     }
   

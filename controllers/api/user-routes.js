@@ -109,6 +109,7 @@ router.post("/login", (req, res) => {
         }
       },
     ],
+    
     where: {
       email: req.body.email,
     },
