@@ -158,7 +158,9 @@ router.get('/login', (req, res) => {
   });
 // renders employee page
 router.get("/employee", (req, res) => {
-    res.render("employee");
+    res.render("employee", {
+    loggedIn: req.session.loggedIn,
+    });
 });
 
 // renders entrepreneur page
