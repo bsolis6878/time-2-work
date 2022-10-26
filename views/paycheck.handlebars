@@ -9,36 +9,26 @@
     <thred>
        <th>Job</th>
        <th>Hours</th>
-       <th>PPH</th>
+       <th>Rate</th>
+       <th>pay</th>
     </thred>
 
 <tbody>
 {{#each timelogs}}
 <tr>
-    <th>{{this.job.job}}</th>
+    <td>{{this.job.job}}</td>
     <td>{{this.minutes_worked}}</td>
     <td></td>
+    <td></td>
+</tr>  
 {{/each}}
-
-</tbody>
-</table>
-</div>
-
-<div class="payjob is-size-5 pl-5 pt-5">
-    <table class="pay-job table is-bordered is-striped" >
-    <thred>
-       <th>Job</th>
-       <th>Rate</th>
- 
-    </thred>
-
-<tbody>
-{{#each timelogs}}
 <tr>
-    <th>{{this.Job.job}}</th>
-    <td>{{this.hourly_rate.hourly_rate}}</td>
-{{/each}}
-
+    <td></td>
+    <td></td>
+    <td style="font-weight: bold;">Total:</td>
+    <td>100</td>
+</tr>
 </tbody>
 </table>
 </div>
+

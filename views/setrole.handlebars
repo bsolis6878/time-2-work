@@ -1,0 +1,34 @@
+<form class="employeeset-form">
+  <div>
+    <label for="company-input">Company:</label>
+    <input type="text" id="company-input" readonly value="1" />
+  </div>
+<div class="field">
+    <label class="label">Role:</label>
+    <div class="control">
+      <div class="select is-dark">
+        <select id="roleID-input">
+   {{#each roles}}
+        <option  data-id="{{this.id}}" value="{{this.id}}">
+            {{this.role_name}}
+        </option>
+       {{/each}}
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <label for="manager-input">Manager:</label>
+    <input type="text" id="manager-input" readonly value="1"/>
+  </div>
+  <div>
+    <label for="userID-input">User:</label>
+    <input type="text" id="userID-input" readonly value="{{uid}}"/>
+  </div>
+    <div>
+    <button type="submit">Submit</button>
+  </div>
+</form>
+
+<script src="/javascript/employeeset.js"></script>
