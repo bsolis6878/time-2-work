@@ -7,22 +7,19 @@
 <div class="paycheck is-size-5 pl-5 pt-5">
     <table class="pay-table table is-bordered is-striped" >
     <thred>
-       <th>Jobs</th>
-       <th>H</th>
-       <th>M</th>
+       <th>Job</th>
+       <th>Hours</th>
        <th>Total</th>
     </thred>
 
 <tbody>
-
+{{#each timelogs}}
 <tr>
-    <th></th>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <th>{{this.job.job}}</th>
+    <td>{{this.minutes_worked}}</td>
     <td></td>
 </tr>
+{{/each}}
 
 </tbody>
 </table>

@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Employee, User, Timelog } = require("../models");
+const { Employee, User, Timelog, Job } = require("../models");
 
 // render homepage
 
@@ -175,7 +175,16 @@ router.get("/manage", (req, res) => {
 // renders paycheck page
 router.get("/paycheck", (req, res) => {
   Timelog.findAll({
-    attributes: ["id", "company_id", "employee_id", "job_id", "hours_worked"],
+    where: {
+      employee_id: 1
+    },
+    attributes: ["id", "company_id", "employee_id", "job_id", "minutes_worked"],
+    include: [
+      {
+        model: Job,
+        attributes: ['job']
+      }
+    ]
   })
     .then(dbTimelogData => {
         // passes employee data into the entrepreneur page
