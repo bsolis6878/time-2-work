@@ -1,142 +1,149 @@
-<section class="hero has-background-grey-lighter nav-bottom-space"></section>
-<section class="has-background-grey-lighter px-5 py-5">
-  <div class="title is-size-5">Fill in and submit </div>
+<section class="has-background-info-light"></section>
+<section
+  class="hero is-fullheight-with-navbar has-background-grey-lighter px-5 py-5"
+>
+  <div class="columns">
+    <div class="column is-half">
 
-  <form class="edit-form">
+      <div class="title is-size-5 mt-3">Fill in and submit </div>
 
-    <div class="field">
-      <label class="label" for="name-edit">New Name</label>
-      <div class="control">
-        <input
-          name="name-edit"
-          class="input"
-          type="text"
-          id="name-edit"
-          placeholder="Please enter your full name"
-          value="{{this.username}}"
-        />
+      <div class="edit-form">
+
+        <div class="field">
+          <label class="label" for="name-edit">New Name</label>
+          <div class="control">
+            <input
+              name="name-edit"
+              class="input"
+              type="text"
+              id="name-edit"
+              placeholder="Please enter your full name"
+              value="{{this.username}}"
+            />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="username-edit">New Username</label>
+          <div class="control has-icons-left has-icons-right">
+            <input
+              name="username-edit"
+              class="input"
+              type="text"
+              id="username-edit"
+              placeholder="Please enter a username"
+              value="{{username}}"
+            />
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-check"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="password-edit">New Password</label>
+          <div class="control has-icons-left has-icons-right">
+            <input
+              name="password-edit"
+              class="input"
+              type="password"
+              id="password-edit"
+              placeholder="Please enter a username"
+              value="{{password}}"
+            />
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-check"></i>
+            </span>
+
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="email-edit">New Email</label>
+          <div class="control has-icons-left has-icons-right">
+            <input
+              name="email-edit"
+              class="input"
+              type="email"
+              id="email-edit"
+              placeholder="hello@time2work.com"
+              value="{{this.email}}"
+            />
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="address-edit">New Address</label>
+          <div class="control has-icons-left has-icons-right">
+            <input
+              name="address-edit"
+              class="input"
+              type="address"
+              id="address-edit"
+              placeholder="1234 Happy Circle, Happyville CA 12345"
+              value="{{address}}"
+            />
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="phone-edit">New Number</label>
+          <div class="control has-icons-left has-icons-right">
+            <input
+              class="input"
+              name="number-edit"
+              type="tel"
+              id="number-edit"
+              placeholder="(555)555-5555"
+              value="{{phone}}"
+            />
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="tax-edit">New Tax-ID (SSN/EIN)</label>
+          <div class="control has-icons-left has-icons-right">
+            <input
+              class="input"
+              name="tax-edit"
+              type="text"
+              placeholder="9999999999"
+              id="tax-edit"
+              value="{{tax_id}}"
+            />
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field is-grouped my-5">
+          <div class="control">
+            <button class="button is-dark">Submit</button>
+          </div>
+          <div class="control">
+            <button class="button is-light">Cancel</button>
+          </div>
+        </div>
+
       </div>
     </div>
-
-    <div class="field">
-      <label class="label" for="username-edit">New Username</label>
-      <div class="control has-icons-left has-icons-right">
-        <input
-          name="username-edit"
-          class="input"
-          type="text"
-          id="username-edit"
-          placeholder="Please enter a username"
-          value="{{username}}"
-        />
-        <span class="icon is-small is-left">
-          <i class="fas fa-user"></i>
-        </span>
-        <span class="icon is-small is-right">
-          <i class="fas fa-check"></i>
-        </span>
-      </div>
-    </div>
-
-    <div class="field">
-      <label class="label" for="password-edit">New Password</label>
-      <div class="control has-icons-left has-icons-right">
-        <input
-          name="password-edit"
-          class="input"
-          type="password"
-          id="password-edit"
-          placeholder="Please enter a username"
-          value="{{password}}"
-        />
-        <span class="icon is-small is-left">
-          <i class="fas fa-user"></i>
-        </span>
-        <span class="icon is-small is-right">
-          <i class="fas fa-check"></i>
-        </span>
-
-      </div>
-    </div>
-
-    <div class="field">
-      <label class="label" for="email-edit">New Email</label>
-      <div class="control has-icons-left has-icons-right">
-        <input
-          name="email-edit"
-          class="input"
-          type="email"
-          id="email-edit"
-          placeholder="hello@time2work.com"
-          value="{{this.email}}"
-        />
-        <span class="icon is-small is-left">
-          <i class="fas fa-envelope"></i>
-        </span>
-      </div>
-    </div>
-
-    <div class="field">
-      <label class="label" for="address-edit">New Address</label>
-      <div class="control has-icons-left has-icons-right">
-        <input
-          name="address-edit"
-          class="input"
-          type="address"
-          id="address-edit"
-          placeholder="1234 Happy Circle, Happyville CA 12345"
-          value="{{address}}"
-        />
-        <span class="icon is-small is-left">
-          <i class="fas fa-envelope"></i>
-        </span>
-      </div>
-    </div>
-
-    <div class="field">
-      <label class="label" for="phone-edit">New Number</label>
-      <div class="control has-icons-left has-icons-right">
-        <input
-          class="input"
-          name="number-edit"
-          type="tel"
-          id="number-edit"
-          placeholder="(555)555-5555"
-          value="{{phone}}"
-        />
-        <span class="icon is-small is-left">
-          <i class="fas fa-envelope"></i>
-        </span>
-      </div>
-    </div>
-
-    <div class="field">
-      <label class="label" for="tax-edit">New Tax-ID (SSN/EIN)</label>
-      <div class="control has-icons-left has-icons-right">
-        <input
-          class="input"
-          name="tax-edit"
-          type="text"
-          placeholder="9999999999"
-          id="tax-edit"
-          value="{{tax_id}}"
-        />
-        <span class="icon is-small is-left">
-          <i class="fas fa-envelope"></i>
-        </span>
-      </div>
-    </div>
-
-    <div class="field is-grouped my-5">
-      <div class="control">
-        <button class="button is-dark">Submit</button>
-      </div>
-      <div class="control">
-        <button class="button is-light">Cancel</button>
-      </div>
-    </div>
-
-  </form>
+  </div>
 </section>
 
 <script src="/javascript/edit-user.js"></script>
