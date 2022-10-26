@@ -35,7 +35,7 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        isAlpha: true,
+        len: [8],
       },
     },
     name: {
