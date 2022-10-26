@@ -40,9 +40,8 @@
 
           </div>
           <footer class="card-footer">
-            <a href="#" class="card-footer-item">Save</a>
-            <a href="#" class="card-footer-item">Edit</a>
-            <a href="#" class="card-footer-item">Delete</a>
+            <a href="edit/{{this.id}}" class="card-footer-item">Edit</a>
+            {{!-- <a href="/{{this.id}}" class="delete-post-btn card-footer-item">Delete</a> --}}
           </footer>
         </div>
       {{/each}}
@@ -81,3 +80,5 @@
     </div>
   </div>
 </section>
+
+  <script src="/javascript/delete.js"></script>

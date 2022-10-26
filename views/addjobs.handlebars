@@ -4,12 +4,38 @@
 
 <form class="job-form">
   <div class="field">
-    <label class="label"for="job-input">New Job</label>
+    <label class="label" for="company-choice">Company Name:</label>
+    <div class="control">
+      <select type="select" placeholder="Text input" id="company-choice">
+        {{#each company}}
+        <option value="{{this.id}}">
+              {{this.name}}
+        </option>
+      {{/each}}
+      </select>
+    </div>
+  </div>
+
+
+
+<form class="job-form">
+  <div class="field">
+    <label class="label" for="job-input">New Job Title:</label>
+   
+   <input class="input" id="job-input" placeholder="Cleaned the dishes" />
+     
+
+  </div>
+
+  <form class="job-form">
+  <div class="field">
+    <label class="label"for="hourly-rate">Hourly Rate:</label>
     <div class="control">
       <input
         class="input"
+        id="hourly-rate"
         type="text"
-        placeholder="Text input"
+        placeholder="15.00"
       />
     </div>
   </div>
@@ -22,54 +48,7 @@
       <button class="button is-light">Cancel</button>
     </div>
   </div>
-
-
-  {{! <form class="signup-form is-size-6-mobile">
-  <div>
-    <label for="username-signup">Username:</label>
-    <input type="text" id="username-signup" />
-  </div>
-  <div>
-    <label for="email-signup">Email:</label>
-    <input type="text" id="email-signup" />
-  </div>
-  <div>
-    <label for="password-signup">Password:</label>
-    <input type="password" id="password-signup" />
-  </div>
-    <div>
-    <label for="name-signup">Name:</label>
-    <input type="text" id="name-signup" />
-  </div>
-    <div>
-    <label for="adress-signup">Address:</label>
-    <input type="address" id="address-signup" />
-  </div>
-    <div>
-    <label for="phone-signup">Phone:</label>
-    <input type="tel" id="phone-signup" />
-  </div>
-     <div>
-    <label for="tax-signup">Tax ID:</label>
-    <input type="number" id="tax-signup" />
-  </div>
-  <div>
-    <button class="button is-dark" type="submit">Sign up</button>
-  </div>
-</form> }}
 </form>
 </section>
-
-
-
-
-{{!-- <form class="job-form is-size-6-mobile">
-  <div>
-    <label for="job-input">New Job</label>
-    <input type="text" id="job-input" />
-    <button class="button is-dark" type="submit">Submit</button>
-  </div>
-</form> --}}
-
 
 <script src="/javascript/job.js"></script>
