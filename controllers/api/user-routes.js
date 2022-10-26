@@ -132,6 +132,7 @@ router.post("/login", (req, res) => {
       req.session.user_id = dbUserData.id;
       req.session.username = dbUserData.username;
       req.session.role = dbUserData.employees[0].role_id;
+      req.session.employee_id = dbUserData.employees[0].id
       //req.session.company = dbUserData.employee.dataValues.company_id;
       req.session.loggedIn = true;
       console.log(dbUserData.employees[0].id);

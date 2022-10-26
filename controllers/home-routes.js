@@ -180,7 +180,11 @@ router.get("/paycheck", (req, res) => {
 // renders task page
 router.get("/task", (req, res) => {
   
-    res.render("task");
+    res.render("task", {
+      loggedIn: req.session.loggedIn,
+      name: req.session.username,
+      eid: req.session.employee_id
+    });
 });
 //renders add company page
 router.get("/addcompany", (req, res) => {

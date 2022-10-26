@@ -6,15 +6,31 @@
 <form class="jobs is-size-6-mobile">
     <h1>Jobs you completed today</h1>
     <div>
-    <label for="job-input">Job you completed:</label>
-    <select  id="job-input" />  </select>
-    {{#each}}
-    <option></option>
-    {{/each}}
-    </div>
-    <label for="hours-input">Hours:</label>   
-    <input type="text" id="hours-input" /> 
-    <label for="minutes-input">Minutes:</label>
-    <input type="text" id="minutes-input" /> 
-    <button type="submit" class="button is-dark">Submit</button>
+    <label for="company_id">Company</label>
+    <input type="text" id="company_id" value="{{company_id}}"/>
+  </div>
+  <div>
+    <label for="employee_id">Employee</label>
+    <input name="email-edit" type="text" id="employee_id" value="{{company_id}}"/>
+  </div>
+   <div>
+    <label for="job-choice">Job Worked</label>
+    <select type="select" id="job-choice">
+  
+        <option>
+
+        </option>
+       
+    </select>
+  </div>
+   <div>
+    <label for="email-edit">hours_worked</label>
+    <input  type="text" id="email-edit"/>
+  </div>
+  <div>    
+    <button type="submit" class="button is-dark">Submit</button
+    ></div>
+
 </form>
+
+
