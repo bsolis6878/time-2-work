@@ -34,7 +34,7 @@ router.get("/:id", (req, res) => {
       });
   });
 
-// create role
+// create timelog
 router.post("/", (req, res) => {
     Timelog.create({
       company_id: req.body.company_id,
