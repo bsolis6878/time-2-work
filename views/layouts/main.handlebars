@@ -11,13 +11,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/ac88cc62aa.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="">
-  <nav class="navbar has-background-info-light" role="navigation" aria-label="main navigation">
+<body class="has-navbar-fixed-top">
+  <nav class="navbar has-background-info-light is-fixed-top" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="/">
-    <h1 class="is-size-2 pl-4">Time 2 Work</h1>
+    <h1 class="is-size-2 pl-4 is-size-4-mobile">Time 2 Work</h1>
     </a>
 
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -60,7 +61,12 @@
 
     <div class="navbar-end">
       <a href="/" class="navbar-item">
-        Home</a>
+        <span class="icon-text">
+  <span class="icon">
+    <i class="fas fa-home"></i>
+  </span>
+  <span>Home</span>
+</span></a>
       </a>
       {{#if loggedIn}}
     
@@ -80,39 +86,12 @@
     </div>
   </div>
 </nav>
-  <div>
-    {{!-- <header class="header-image">
-      <h1 class="title">
-        <a href="/" >Time 2 Work</a>
-        
-      </h1>
-    <nav class="nav is-size-6-mobile" class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <div id="navbarBasicExample" class="navbar-menu is-active">
-            <div class="navbar-start">
-               <a class="navbar-item">
-        <a href="/">Home</a>
-               </a>
-        {{#if loggedIn}}
-        <button id="logout" class="button is-black">logout</button>
-        {{else}}
-        <a class="navbar-item">
-        <a href="/login">login</a>
-        </a>
-        <a class="navbar-item">
-        <a href="/signup">Sign up</a>
-        </a>
-        {{/if}}
-        </div>
-      </nav>
-    </header> --}}
     <main>
       {{{ body }}}
     </main>
     <footer class="is-size-6-mobile">
       Welcome To Time 2 Work Enjoy Your Stay!
     </footer>
-  </div>
   
   {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
