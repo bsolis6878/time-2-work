@@ -44,21 +44,19 @@ router.post("/", (req, res) => {
     })
       .then((dbUserData) => {
 
-      req.session.save(() => {
-        req.session.user_id = dbUserData.id;
-        req.session.username = dbUserData.username;
-        console.log(dbUserData.role_id);
-        req.session.role = dbUserData.role_id;
-        req.session.employee_id = dbUserData.id;
-        req.session.company_id = dbUserData.company_id;
-        req.session.loggedIn = true;
-      });
+        req.session.reload(() => {
+          req.session.user_id = dbUserData.id;
+          req.session.username = dbUserData.username;
+          console.log(dbUserData.user);
+          req.session.role = dbUserData.role_id;
+          req.session.employee_id = dbUserData.id;
+          req.session.company_id = dbUserData.company_id;
+          //req.session.company = dbUserData.employee.dataValues.company_id;
+          req.session.loggedIn = true;
     })
-      .catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
-      });
+
   });
+});
 
 // update employee
 router.put("/:id", (req, res) => {
