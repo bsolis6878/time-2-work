@@ -4,7 +4,7 @@ async function editUserHandler(event) {
   const company_id = document.querySelector('input[name="username-edit"]').value.trim();
   const employee_id = document.querySelector('input[name="email-edit"]').value.trim();
   const job_id = document.querySelector('input[name="password-edit"]').value.trim();
-  const hours_worked = document.querySelector('input[name="name-edit"]').value.trim();
+  const hours_worked = document.querySelector('input[name="data-id"]').value.trim();
   const id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
   ];

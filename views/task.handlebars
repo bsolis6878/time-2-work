@@ -6,21 +6,21 @@
 <form class="jobs is-size-6-mobile">
     <h1>Jobs you completed today</h1>
     <div>
-    <label for="company_id">Company</label>
-    <input type="text" id="company_id" value="{{company_id}}"/>
+    <label for="company_id">Company ID:</label>
+    <input type="text" id="company_id" readonly value="{{cid}}"/>
   </div>
   <div>
-    <label for="employee_id">Employee</label>
-    <input name="email-edit" type="text" id="employee_id" value="{{company_id}}"/>
+    <label for="employee_id">Employee ID:</label>
+    <input name="email-edit" type="text" id="employee_id" readonly value="{{eid}}"/>
   </div>
    <div>
     <label for="job-choice">Job Worked</label>
     <select type="select" id="job-choice">
-  
-        <option>
-
+        {{#each job}}
+        <option data-id="{{this.id}}">
+            {{this.job}}
         </option>
-       
+       {{/each}}
     </select>
   </div>
    <div>
