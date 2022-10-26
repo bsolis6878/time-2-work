@@ -37,6 +37,11 @@ body {
   padding-top: 1rem;
 }
 
+ /* .label {
+  background-color:rgb(232, 229, 200);
+ 
+}  */
+
 /* .navbar-item {
   font-family: 'Cabin', sans-serif;
 
@@ -96,11 +101,11 @@ input,
 /* background-color: greenyellow; */
 /* } */
 
-/* footer {
+ /* footer {
   font-size: 25px;
   position: absolute;
   bottom: 0;
-} */
+}  */
 
 /* .description {
   margin: 0;
