@@ -14,13 +14,16 @@ body {
   font-family: "Cabin", sans-serif;
 }
 
-.hero2 {
+.hero {
   /* background-image: linear-gradient(
       rgba(183, 173, 173, 0.5),
       rgba(228, 211, 211, 0.5)
     ),
     url(../images/run.avif); */
-  background-image: url("../images/run.avif");
+  background-image: linear-gradient(
+    rgba(235, 225, 225, 0.5),
+    rgba(237, 221, 221, 0.5)
+  ), url("../images/run.avif");
   background-size: auto;
   background-attachment: relative;
   /* background-position: 0px -740px; */
