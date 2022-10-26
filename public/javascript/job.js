@@ -1,12 +1,17 @@
 async function newJobHandler(event) {
     event.preventDefault();
   
-    const role = document.querySelector('input[name="job-input"]').value;
+
+    const company_id = document.querySelector('#company-choice').value;
+    const job = document.querySelector('#job-input').value;
+    const hourly_rate = document.querySelector('#hourly-rate').value;
   
-    const response = await fetch(`/api/roles`, {
+    const response = await fetch(`/api/jobs`, {
       method: 'POST',
       body: JSON.stringify({
-        job
+        company_id,
+        job,
+        hourly_rate
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -14,7 +19,8 @@ async function newJobHandler(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/addrole');
+      response.json("Role Added!");
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }
