@@ -34,11 +34,20 @@ body {
   /* align-items: center; */
 }
 
+.hero-tile {
+  background-image: linear-gradient(
+      rgba(235, 225, 225, 0.5),
+      rgba(237, 221, 221, 0.5)
+    ),
+    url("../images/pattern_tile2.png");
+  background-repeat: repeat;
+}
+
 .nav-bottom-space {
   padding-top: 1rem;
 }
 
- /* .label {
+/* .label {
   background-color:rgb(232, 229, 200);
  
 }  */
@@ -102,7 +111,7 @@ input,
 /* background-color: greenyellow; */
 /* } */
 
- /* footer {
+/* footer {
   font-size: 25px;
   position: absolute;
   bottom: 0;

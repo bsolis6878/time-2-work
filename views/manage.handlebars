@@ -1,4 +1,53 @@
-<div class="us-table pl-5 pt-4">
+<section class="has-background-info-light"></section>
+<section
+  class="hero hero-tile is-fullheight-with-navbar has-background-grey-lighter px-5 py-5"
+>
+  <div class="columns">
+    <div class="column is-centered">
+
+      {{#each user}}
+        <div class="card my-5">
+          <header class="card-header">
+            <p class="card-header-title">
+              #
+              {{this.id}}
+              -
+              {{this.name}}
+            </p>
+          </header>
+          <div class="card-content py-4">
+            <div class="content">
+              <div class="columns">
+                <div class="column py-2">
+                  <h4 class="is-size-6 mb-0">Username:</h4>
+                  <p class="">{{this.username}}</h4>
+                </div>
+                <div class="column py-2">
+                  <h4 class="is-size-6 mb-0">Email Address:</h4>
+                  <p class="">{{this.email}}</h4>
+                </div>
+                <div class="column py-2">
+                  <h4 class="is-size-6 mb-0">Phone Number:</h4>
+                  <p class="">{{this.phone_number}}</h4>
+                </div>
+              </div>
+            </div>
+
+            <div class="content">
+              <h4 class="is-size-6 mb-0">Address:</h4>
+              {{this.addr1}}
+            </div>
+
+          </div>
+          <footer class="card-footer">
+            <a href="#" class="card-footer-item">Save</a>
+            <a href="#" class="card-footer-item">Edit</a>
+            <a href="#" class="card-footer-item">Delete</a>
+          </footer>
+        </div>
+      {{/each}}
+
+      {{!-- <div class="us-table pl-5 pt-4">
 <table class="user-table table is-bordered is-striped">
     <thred>
        <th>#</th>
@@ -27,11 +76,8 @@
 </tbody>
 {{/each}}
 </tbody>
-</table>
+</table> --}}
 
-
-
-
-
-
-
+    </div>
+  </div>
+</section>
