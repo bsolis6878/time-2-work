@@ -42,7 +42,18 @@ router.post("/", (req, res) => {
       role_id: req.body.role_id,
       manager_id: req.body.manager_id
     })
-      .then((dbEmployeeData) => res.json(dbEmployeeData))
+      .then((dbUserData) => {
+
+      req.session.save(() => {
+        req.session.user_id = dbUserData.id;
+        req.session.username = dbUserData.username;
+        console.log(dbUserData.role_id);
+        req.session.role = dbUserData.role_id;
+        req.session.employee_id = dbUserData.id;
+        req.session.company_id = dbUserData.company_id;
+        req.session.loggedIn = true;
+      });
+    })
       .catch((err) => {
         console.log(err);
         res.status(500).json(err);

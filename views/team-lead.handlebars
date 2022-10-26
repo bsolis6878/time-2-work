@@ -14,22 +14,20 @@
     <table class="user-table table is-bordered is-striped">
     <thred>
        <th>#</th>
-       <th>Username</th>
-       <th>Email</th>
-       <th>Name</th>
-       <th>Address</th>
-       <th>Phone</th>
+       <th>User</th>
+       <th>Role</th>
+ 
+     
     </thred>
 
 <tbody>
-{{#each users}}
+{{#each employees}}
 <tr>
-    <th>{{this.id}}</th>
-    <td>{{this.username}}</td>
-    <td>{{this.email}}</td>
-    <td>{{this.name}}</td>
-    <td>{{this.addr1}}</td>
-    <td>{{this.phone_number}}</td>
+    <th>{{this.user_id}}</th>
+    <td>{{this.user.name}}</td>
+    <td>{{this.role.role_name}}</td>
+
+
 </tr>
 {{/each}}
 </tbody>
