@@ -8,7 +8,6 @@ const User = require("./User");
 
 // create associations
 
-module.exports = { User, Company, Role, Employee };
 // Model -User
 //// User to Employee
 Employee.belongsTo(User, {
