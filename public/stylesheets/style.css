@@ -14,25 +14,43 @@ body {
   font-family: "Cabin", sans-serif;
 }
 
-.hero2 {
+.hero {
   /* background-image: linear-gradient(
       rgba(183, 173, 173, 0.5),
       rgba(228, 211, 211, 0.5)
     ),
     url(../images/run.avif); */
-  background-image: url("../images/run.avif");
+  background-image: linear-gradient(
+      rgba(235, 225, 225, 0.5),
+      rgba(237, 221, 221, 0.5)
+    ),
+    url("../images/run.avif");
   background-size: auto;
   background-attachment: relative;
-  /* background-position: 0px -740px; */
+  background-position: -200px 0px;
   position: relative;
   /* padding: 50px 0px; */
   /* min-height: 200px; */
-  align-items: center;
+  /* align-items: center; */
+}
+
+.hero-tile {
+  background-image: linear-gradient(
+      rgba(235, 225, 225, 0.5),
+      rgba(237, 221, 221, 0.5)
+    ),
+    url("../images/pattern_tile2.png");
+  background-repeat: repeat;
 }
 
 .nav-bottom-space {
   padding-top: 1rem;
 }
+
+/* .label {
+  background-color:rgb(232, 229, 200);
+ 
+}  */
 
 /* .navbar-item {
   font-family: 'Cabin', sans-serif;
@@ -97,7 +115,7 @@ input,
   font-size: 25px;
   position: absolute;
   bottom: 0;
-} */
+}  */
 
 /* .description {
   margin: 0;
@@ -147,4 +165,7 @@ input,
 } */
 
 @media screen and (max-width: 575px) {
+  .hero {
+    background-position: -550px 0px;
+  }
 }
