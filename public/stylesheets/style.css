@@ -101,7 +101,7 @@ textarea, input, .entrepreneur, .employee {
     
   }
 
-  .login-form, .job-form, .role-form, .jobs {
+  .login-form, .job-form, .role-form, .jobs, .edit-form {
     position: absolute;
     right: 0px;
     width: 300px;
