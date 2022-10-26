@@ -3,7 +3,7 @@
 ## Description
 
 Welcome to Time-2-Work! Starting a team and need to track their work? We have you covered!</br>
-With our applications you can set up managers, employees, jobs worked and hours tracked, all in an easy to use app!
+With our mobile-responsive applications you can set up managers, employees, jobs worked and hours tracked, all in an easy to use app from anywhere!
 
 ## Installation/Usage
 
