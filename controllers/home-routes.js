@@ -182,7 +182,7 @@ router.get("/paycheck", (req, res) => {
     include: [
       {
         model: Job,
-        attributes: ['job']
+        attributes: ['job', 'hourly_rate']
       }
     ]
   })
