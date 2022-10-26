@@ -21,23 +21,33 @@ body {
     ),
     url(../images/run.avif); */
   background-image: linear-gradient(
-    rgba(235, 225, 225, 0.5),
-    rgba(237, 221, 221, 0.5)
-  ), url("../images/run.avif");
+      rgba(235, 225, 225, 0.5),
+      rgba(237, 221, 221, 0.5)
+    ),
+    url("../images/run.avif");
   background-size: auto;
   background-attachment: relative;
-  /* background-position: 0px -740px; */
+  background-position: -200px 0px;
   position: relative;
   /* padding: 50px 0px; */
   /* min-height: 200px; */
-  align-items: center;
+  /* align-items: center; */
+}
+
+.hero-tile {
+  background-image: linear-gradient(
+      rgba(235, 225, 225, 0.5),
+      rgba(237, 221, 221, 0.5)
+    ),
+    url("../images/pattern_tile2.png");
+  background-repeat: repeat;
 }
 
 .nav-bottom-space {
   padding-top: 1rem;
 }
 
- /* .label {
+/* .label {
   background-color:rgb(232, 229, 200);
  
 }  */
@@ -101,7 +111,7 @@ input,
 /* background-color: greenyellow; */
 /* } */
 
- /* footer {
+/* footer {
   font-size: 25px;
   position: absolute;
   bottom: 0;
@@ -155,4 +165,7 @@ input,
 } */
 
 @media screen and (max-width: 575px) {
+  .hero {
+    background-position: -550px 0px;
+  }
 }
