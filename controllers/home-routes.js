@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Employee, User, Timelog } = require("../models");
+const { Employee, User, Timelog, Job } = require("../models");
 
 // render homepage
 
@@ -192,12 +192,26 @@ router.get("/paycheck", (req, res) => {
 
 // renders task page
 router.get("/task", (req, res) => {
-  
+  Job.findAll({
+    attributes: [
+      'id',
+      'company_id',
+      'job',
+      'hourly_rate'
+    ]
+
+  })
+    .then(dbUserData => {
+      const job = dbUserData.map(job => job.get({ plain: true }));
+      
     res.render("task", {
+      job,
       loggedIn: req.session.loggedIn,
       name: req.session.username,
-      eid: req.session.employee_id
+      eid: req.session.employee_id,
+      cid: req.session.company_id
     });
+});
 });
 //renders add company page
 router.get("/addcompany", (req, res) => {
