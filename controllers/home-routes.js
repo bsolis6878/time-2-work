@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Employee, User, Timelog } = require("../models");
+const { Employee, User, Timelog, Job } = require("../models");
 
 // render homepage
 
@@ -26,7 +26,16 @@ router.get('/', (req, res) => {
       .then(dbUserData => {
         const user = dbUserData.map(user => user.get({ plain: true }));
         const employee = dbUserData.map(employee => employee.get({ plain: true }));
-        
+        if (req.session.role === 1) {
+          res.redirect('/entrepreneur')
+        }
+        else if (req.session.role === 2) {
+          res.redirect('/team-lead')
+        }
+        else if (req.session.role === 3) {
+          res.redirect('/employee')
+        }else
+
         res.render('homepage', {
           user,
           employee,
@@ -99,7 +108,7 @@ router.get('/edit/:id', (req, res) => {
 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
-      res.redirect('/');
+     res.redirect('/');
       return;
     }
   
@@ -166,7 +175,16 @@ router.get("/manage", (req, res) => {
 // renders paycheck page
 router.get("/paycheck", (req, res) => {
   Timelog.findAll({
-    attributes: ["id", "company_id", "employee_id", "job_id", "hours_worked"],
+    where: {
+      employee_id: 1
+    },
+    attributes: ["id", "company_id", "employee_id", "job_id", "minutes_worked"],
+    include: [
+      {
+        model: Job,
+        attributes: ['job']
+      }
+    ]
   })
     .then(dbTimelogData => {
         // passes employee data into the entrepreneur page
@@ -183,8 +201,26 @@ router.get("/paycheck", (req, res) => {
 
 // renders task page
 router.get("/task", (req, res) => {
-  
-    res.render("task");
+  Job.findAll({
+    attributes: [
+      'id',
+      'company_id',
+      'job',
+      'hourly_rate'
+    ]
+
+  })
+    .then(dbUserData => {
+      const job = dbUserData.map(job => job.get({ plain: true }));
+      
+    res.render("task", {
+      job,
+      loggedIn: req.session.loggedIn,
+      name: req.session.username,
+      eid: req.session.employee_id,
+      cid: req.session.company_id
+    });
+});
 });
 //renders add company page
 router.get("/addcompany", (req, res) => {
