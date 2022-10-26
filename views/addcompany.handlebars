@@ -1,18 +1,164 @@
- q<div class="field">
- <form class="company-form">
+<section class="has-background-grey-lighter nav-bottom-space"></section>
+<section class="has-background-grey-lighter px-5 py-5">
+  <div class="title is-size-5">Fill in and submit to Add Company</div>
+
+<form class="company-form">
+  <div class="field">
+    <label class="label"for="companyName-select">Company Name</label>
+    <div class="control">
+      <input
+        class="input"
+        type="text"
+        placeholder="Text input"
+      />
+    </div>
+  </div>
+
+
+
+
+      {{! <span class="icon is-small is-right">
+      <i class="fas fa-exclamation-triangle"></i>
+    </span>
+  </div>
+  <p class="passworderror help is-danger">This email is invalid</p> }}
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label"for="companyTax-input">Company Tax ID</label>
+    <div class="control has-icons-left has-icons-right">
+      <input
+        class="input"
+        type="email"
+        placeholder="1234566789"
+        value=""
+      />
+      <span class="icon is-small is-left">
+        <i class="fas fa-envelope"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label"for="addressCompany-input">Company Address</label>
+    <div class="control has-icons-left has-icons-right">
+      <input
+        class="input"
+        type="text"
+        placeholder="1234 Happy Circle, Happyville CA 12345"
+        value=""
+      />
+      <span class="icon is-small is-left">
+        <i class="fas fa-envelope"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label"for="companyNumber-input">Company Number</label>
+    <div class="control has-icons-left has-icons-right">
+      <input class="input" type="tel" placeholder="(555)555-5555" value="" />
+      <span class="icon is-small is-left">
+        <i class="fas fa-envelope"></i>
+      </span>
+    </div>
+  </div>
+
+
+
+
+  <div class="field">
+    <label class="label">Please select the company:</label>
+    <div class="control">
+      <div class="select is-dark">
+        <select>
+          <option>ABC</option>
+          <option>Company2</option>
+          <option>ThirdCo</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="field is-grouped my-5">
+    <div class="control">
+      <button class="button is-dark">Submit</button>
+    </div>
+    <div class="control">
+      <button class="button is-light">Cancel</button>
+    </div>
+  </div>
+
+  {{! <form class="signup-form is-size-6-mobile">
   <div>
+    <label for="username-signup">Username:</label>
+    <input type="text" id="username-signup" />
+  </div>
+  <div>
+    <label for="email-signup">Email:</label>
+    <input type="text" id="email-signup" />
+  </div>
+  <div>
+    <label for="password-signup">Password:</label>
+    <input type="password" id="password-signup" />
+  </div>
+    <div>
+    <label for="name-signup">Name:</label>
+    <input type="text" id="name-signup" />
+  </div>
+    <div>
+    <label for="adress-signup">Address:</label>
+    <input type="address" id="address-signup" />
+  </div>
+    <div>
+    <label for="phone-signup">Phone:</label>
+    <input type="tel" id="phone-signup" />
+  </div>
+     <div>
+    <label for="tax-signup">Tax ID:</label>
+    <input type="number" id="tax-signup" />
+  </div>
+  <div>
+    <button class="button is-dark" type="submit">Sign up</button>
+  </div>
+</form> }}
+</form>
+</section>
+  
+
+
+
+
+
+
+
+
+
+ {{!-- <form class="company-form"> --}}
+  {{!-- <div>
     <label class="label" for="companyName-select">Company Name:</label>
+    <div class="control">
     <div class="input" type="text" placeholder="Text input"></div>
+    </div>
     <select id="companyName-select" />
     <option value="companyName-input">Select Company</option>
   </div>
-    <div class="field">
+
+ <label class="label">Label</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="Text input">
+  </div>
+
+
     <label class="label" for="addressCompany-input">Company Address:</label>
-    <div class="control"></div>
-    <div class="input" type="text" placeholder="Text input"></div>
+     <div class="control">
+    <input class="input" type="text" placeholder="Text input">
+  </div>
     <input type="text" id="addressCompany-input" />
   </div>
     <div>
+
     <label for="companyNumber-input">Company Number:</label>
     <input type="text" id="companyNumber-input" />
   </div>
@@ -22,7 +168,7 @@
   </div>
       <div>
     <button type="submit">Submit</button>
-  </div>
+  </div> --}}
 </form> 
 
 <script src="/javascript/company.js"></script>
