@@ -4,7 +4,7 @@ const { Timelog } = require("../../models");
 // get all timelogs
 router.get("/", (req, res) => {
     Timelog.findAll({
-      attributes: ["company_id", "employee_id", "job_id", "hours_worked"],
+      attributes: ["company_id", "employee_id", "job_id", "minutes_worked"],
     })
       .then((dbTimelogData) => res.json(dbTimelogData))
       .catch((err) => {
@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
 // get individual timelog
 router.get("/:id", (req, res) => {
     Timelog.findOne({
-    attributes: ["company_id", "employee_id", "job_id", "hours_worked"],
+    attributes: ["company_id", "employee_id", "job_id", "minutes_worked"],
       where: {
         id: req.params.id,
       },
@@ -40,7 +40,7 @@ router.post("/", (req, res) => {
       company_id: req.body.company_id,
       employee_id: req.body.employee_id,
       job_id: req.body.job_id,
-      hours_worked: req.body.hours_worked
+      minutes_worked: req.body.minutes_worked
     })
       .then((dbTimelogData) => res.json(dbTimelogData))
       .catch((err) => {
