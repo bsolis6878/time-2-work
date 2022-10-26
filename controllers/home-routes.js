@@ -225,7 +225,22 @@ router.get("/addjobs", (req, res) => {
 
 // renders addrole page
 router.get("/addrole", (req, res) => {
-    res.render("addrole");
+  Company.findAll({
+    attributes: [
+      'id',
+      'name'
+    ]
+  })
+
+  .then(dbCompanyData => {
+    // passes employee data into the entrepreneur page
+    const company = dbCompanyData.map(companies => companies.get({ plain: true }))
+    res.render("addrole",{
+      company,
+    loggedIn: req.session.loggedIn,
+    cid: req.session.company_id
+    });
+});
 });
 
 // renders manage page

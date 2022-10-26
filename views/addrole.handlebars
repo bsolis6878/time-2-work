@@ -4,22 +4,26 @@
 
 <form class="role-form">
   <div class="field">
-    <label class="label"for="company-ID">Company</label>
+    <label class="label" for="company-choice">Company Name:</label>
     <div class="control">
-      <input
-        class="input"
-        type="text"
-        placeholder="Text input"
-      />
+      <select type="select"  id="company-choice">
+        {{#each company}}
+        <option value="{{this.id}}">
+              {{this.name}}
+        </option>
+      {{/each}}
+      </select>
     </div>
   </div>
+
   <div class="field">
     <label class="label"for="role-name">New Role</label>
     <div class="control">
       <input
         class="input"
         type="text"
-        placeholder="Text input"
+        placeholder="Entrepreneur"
+        id="role-name"
       />
     </div>
   </div>

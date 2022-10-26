@@ -1,13 +1,13 @@
 async function newRoleHandler(event) {
     event.preventDefault();
   
-    const companyID = document.querySelector('#company-ID').value.trim();
-    const roleName = document.querySelector('#role-name').value.trim();
+    const company_id = document.querySelector('#company-choice').value.trim();
+    const role_name = document.querySelector('#role-name').value.trim();
     const response = await fetch(`/api/roles`, {
       method: 'POST',
       body: JSON.stringify({
-       companyID,
-       roleName
+       company_id,
+       role_name
         
       }),
       headers: {
@@ -16,7 +16,7 @@ async function newRoleHandler(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/addrole');
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }
