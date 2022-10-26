@@ -1,6 +1,6 @@
 <div class="signed-in pl-5 pt-4">
     {{#if loggedIn}}
-<h1>Current Signed in as: {{name}}</h1>
+<h1>Currently Signed in as: {{name}}</h1>
 {{/if}}
 </div>
 
@@ -8,7 +8,16 @@
 
 <div role="team-lead" class="is-size-5 pl-5 pt-4">Role: Team Leader</div>
 
-<div class="manage-hours"></div>
+<nav>
+    <ul>
+    <li class="is-size-4 pt-5 pl-5">
+       <a href="/task">Work</a> 
+    </li>
+    <li class="is-size-4 pt-5 pl-5">
+        <a href="/paycheck">View Paycheck</a> 
+    </li>
+    </ul>
+</nav>
 
 <div class="manage-employees pl-5 pt-4">
     <table class="user-table table is-bordered is-striped">

@@ -245,6 +245,7 @@ router.get("/team-lead", (req, res) => {
             console.log(dbEmployeeData.roles);
             res.render("team-lead", {
                 employees,
+                name: req.session.username,
                 loggedIn: req.session.loggedIn
             });
         })
@@ -305,7 +306,7 @@ router.get("/manage", (req, res) => {
 router.get("/paycheck", (req, res) => {
   Timelog.findAll({
     where: {
-      employee_id: 1
+      employee_id: req.session.employee_id
     },
     attributes: ["id", "company_id", "employee_id", "job_id", "minutes_worked"],
     include: [
@@ -319,7 +320,9 @@ router.get("/paycheck", (req, res) => {
         // passes employee data into the entrepreneur page
         const timelogs = dbTimelogData.map(timelog => timelog.get({ plain: true }))
         res.render("paycheck", {
-            timelogs
+            timelogs,
+            loggedIn: req.session.loggedIn,
+            name: req.session.username
         });
     })
     .catch(err => {
