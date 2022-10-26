@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Employee, User } = require("../models");
+const { Employee, User, Timelog } = require("../models");
 
 // render homepage
 
@@ -11,15 +11,28 @@ router.get('/', (req, res) => {
         'username',
         'email'
       ],
+      include: [
+        {
+          model: Employee,
+          attributes: ['id', 'company_id', 'role_id', 'manager_id', 'user_id'],
+          include: {
+            model: User,
+            attributes: ['username']
+          }
+        },
+      ]
   
     })
       .then(dbUserData => {
         const user = dbUserData.map(user => user.get({ plain: true }));
+        const employee = dbUserData.map(employee => employee.get({ plain: true }));
         
         res.render('homepage', {
           user,
+          employee,
           loggedIn: req.session.loggedIn,
-          name: req.session.username
+          name: req.session.username,
+          role: req.session.role
          
         });
       })
@@ -48,17 +61,29 @@ router.get("/manage", (req, res) => {
         'tax_id'
 
       ],
+      include: [
+        {
+          model: Employee,
+          attributes: ['id', 'company_id', 'role_id', 'manager_id', 'user_id'],
+          include: {
+            model: User,
+            attributes: ['username']
+          }
+        },
+      ]
   
     })
       .then(dbUserData => {
         const user = dbUserData.map(user => user.get({ plain: true }));
+        const employee = dbUserData.map(employee => employee.get({ plain: true }));
         
         res.render("manage", {
           user,
+          employee,
           loggedIn: req.session.loggedIn,
-          name: req.session.username
-         
-        });
+          name: req.session.username,
+          
+        })
       })
       .catch(err => {
         console.log(err);
@@ -140,12 +165,35 @@ router.get("/manage", (req, res) => {
 
 // renders paycheck page
 router.get("/paycheck", (req, res) => {
-    res.render("paycheck");
+  Timelog.findAll({
+    attributes: ["id", "company_id", "employee_id", "job_id", "hours_worked"],
+  })
+    .then(dbTimelogData => {
+        // passes employee data into the entrepreneur page
+        const timelogs = dbTimelogData.map(timelog => timelog.get({ plain: true }))
+        res.render("paycheck", {
+            timelogs
+        });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 // renders task page
 router.get("/task", (req, res) => {
+  
     res.render("task");
+});
+//renders add company page
+router.get("/addcompany", (req, res) => {
+  res.render("addcompany");
+});
+
+//renders add employee page
+router.get("/addemployee", (req, res) => {
+  res.render("addemployee");
 });
 
 module.exports = router;

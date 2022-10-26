@@ -37,7 +37,7 @@ Timelog.init(
         key: "id",
       },
     },
-    hours_worked: {
+    minutes_worked: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
     },
