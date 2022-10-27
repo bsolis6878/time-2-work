@@ -10,18 +10,20 @@
           <h1>Currently Signed in as: {{name}}</h1>
         {{/if}}
       </div>
-      <div class="jobs-form is-size-6-mobile">
+      <div class="jobs-form is-size-6-mobile is-size-5 mt-3">
         <h1>Jobs you completed today</h1>
         <div>
-          <label for="company_id">Company ID:</label>
-          <input type="text" id="company_id" readonly value="{{cid}}" />
+          <label for="company_id" class="label">Company ID:</label>
+          <div class="control">
+            <input type="text" id="company_id" readonly value="{{cid}}" />
+          </div>
         </div>
         <div>
-          <label for="employee_id">Employee ID:</label>
+          <label for="employee_id" class="label">Employee ID:</label>
           <input type="text" id="employee_id" readonly value="{{eid}}" />
         </div>
         <div>
-          <label for="job-id">Job Worked</label>
+          <label for="job-id" class="label">Job Worked</label>
           <select class="job-id" type="select" id="job-id">
             {{#each job}}
               <option data-id="{{this.id}}" value="{{this.id}}">
