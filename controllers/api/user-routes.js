@@ -52,6 +52,7 @@ router.post("/", (req, res) => {
     addr1: req.body.addr1,
     phone_number: req.body.phone_number,
     tax_id: req.body.tax_id,
+    
   
   include: [
     {

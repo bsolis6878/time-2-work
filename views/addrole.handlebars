@@ -1,52 +1,49 @@
-<section class="has-background-grey-lighter nav-bottom-space"></section>
-<section class="has-background-grey-lighter px-5 py-5">
-  <div class="title is-size-5">Fill in and submit to Add Roles</div>
+<section class="has-background-info-light"></section>
+<section
+  class="hero is-fullheight-with-navbar has-background-grey-lighter px-5 py-5"
+>
+  <div class="columns">
+    <div class="column is-half">
 
-<form class="role-form">
-  <div class="field">
-    <label class="label"for="company-ID">Company</label>
-    <div class="control">
-      <input
-        class="input"
-        type="text"
-        placeholder="Text input"
-      />
-    </div>
-  </div>
-  <div class="field">
-    <label class="label"for="role-name">New Role</label>
-    <div class="control">
-      <input
-        class="input"
-        type="text"
-        placeholder="Text input"
-      />
-    </div>
-  </div>
+      <div class="title is-size-5 mt-3">Fill in and submit to Add Roles</div>
 
-   <div class="field is-grouped my-5">
-    <div class="control">
-      <button class="button is-dark">Submit</button>
-    </div>
-    <div class="control">
-      <button class="button is-light">Cancel</button>
+      <div class="role-form">
+        <div class="field">
+          <label class="label" for="company-choice">Company Name:</label>
+          <div class="control">
+            <select type="select" id="company-choice">
+              {{#each company}}
+                <option value="{{this.id}}">
+                  {{this.name}}
+                </option>
+              {{/each}}
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="role-name">New Role</label>
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              placeholder="Entrepreneur"
+              id="role-name"
+            />
+          </div>
+        </div>
+
+        <div class="field is-grouped my-5">
+          <div class="control">
+            <button class="button is-dark">Submit</button>
+          </div>
+          <div class="control">
+            <button class="button is-light">Cancel</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</form>
 </section>
 
-{{!-- <form class="role-form">
-  <div>
-    <label for="company-ID">Company:</label>
-    <input type="text" id="company-ID" />
-  </div>
-  <div>
-    <label for="role-name">New Role</label>
-    <input type="text" id="role-name" />
-  </div>    
-  <div>
-    <button class="button is-dark" type="submit">Submit</button>
-  </div>
-</form>
-   --}}
 <script src="/javascript/role.js"></script>

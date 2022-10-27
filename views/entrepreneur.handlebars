@@ -1,39 +1,40 @@
-<div class="signed-in">
-   {{#if loggedIn}}
-<h1>Current Signed in as: {{name}}</h1>
-{{/if}}
-</div>
-<section class="has-background-grey-lighter nav-bottom-space"></section>
-<section class="has-background-grey-lighter px-5 py-5">
-  <div class="title is-size-5"></div>
+<section class="has-background-info-light"></section>
+<section
+  class="hero is-fullheight-with-navbar has-background-grey-lighter px-5 py-5"
+>
+  <div class="signed-in">
+    {{#if loggedIn}}
+      <h1>Current Signed in as: {{name}}</h1>
+    {{/if}}
+  </div>
 
+  <div class="columns">
+    <div class="column is-half">
+      <div class="title is-size-5"></div>
 
+      <div class="company"></div>
 
+      <div class="ml-5 entrepreneur is-size-3" role="entrepreneur">Role:
+        <span class="is-size-4">Entrepreneur</span></div>
 
-<div class="company"></div>
-
-<div class="entrepreneur is-size-3" role="entrepreneur">Role: entrepreneur</div>
-
-<nav>
-    <ol>
-        <li class="is-size-4 pt-5 pl-5">
-        <a href="/manage" class="manage-employees"> Manage Employees</a>
-        </li>
-        <li class="is-size-4 pt-5 pl-5">
-            <a href="/addjobs" class="add-jobs">More Jobs</a>
-        </li>
-         <li class="is-size-4 pt-5 pl-5">
-            <a href="/addrole" class="add-role">More Roles</a>
-        </li>
-    </ol>
-</nav>
-
-
-
-
-
-
-
-
-
-
+      <nav>
+        <ol>
+          <ul class="is-size-4 pt-5 pl-5">
+            <a href="/manage" class="manage-employees">
+              <button class="button is-dark is-large">Manage Employees</button></a>
+          </ul>
+          <ul class="is-size-4 pt-5 pl-5">
+            <a href="/addjobs" class="add-jobs"><button
+                class="button is-dark is-large"
+              >More Jobs</button></a>
+          </ul>
+          <ul class="is-size-4 pt-5 pl-5">
+            <a href="/addrole" class="add-role"><button
+                class="button is-dark is-large"
+              >More Roles</button></a>
+          </ul>
+        </ol>
+      </nav>
+    </div>
+  </div>
+</section>
