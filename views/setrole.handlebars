@@ -1,34 +1,45 @@
+<section class="has-background-info-light"></section>
 <form class="employeeset-form">
-  <div>
-    <label for="company-input">Company:</label>
-    <input type="text" id="company-input" readonly value="1" />
-  </div>
-<div class="field">
-    <label class="label">Role:</label>
-    <div class="control">
-      <div class="select is-dark">
-        <select id="roleID-input">
-   {{#each roles}}
-        <option  data-id="{{this.id}}" value="{{this.id}}">
-            {{this.role_name}}
-        </option>
-       {{/each}}
-        </select>
+<section
+  class="hero is-fullheight-with-navbar has-background-grey-lighter px-5 py-5"
+>
+  <div class="columns">
+    <div class="column is-half">
+
+      <div class="employeeset-form">
+        <div>
+          <label for="company-input">Company:</label>
+          <input type="text" id="company-input" readonly value="1" />
+        </div>
+        <div class="field">
+          <label class="label">Role:</label>
+          <div class="control">
+            <div class="select is-dark">
+              <select id="roleID-input">
+                {{#each roles}}
+                  <option data-id="{{this.id}}" value="{{this.id}}">
+                    {{this.role_name}}
+                  </option>
+                {{/each}}
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <label for="manager-input">Manager:</label>
+          <input type="text" id="manager-input" readonly value="1" />
+        </div>
+        <div>
+          <label for="userID-input">User:</label>
+          <input type="text" id="userID-input" readonly value="{{uid}}" />
+        </div>
+        <div>
+          <button type="submit">Submit</button>
+        </div>
       </div>
     </div>
   </div>
-
-  <div>
-    <label for="manager-input">Manager:</label>
-    <input type="text" id="manager-input" readonly value="1"/>
-  </div>
-  <div>
-    <label for="userID-input">User:</label>
-    <input type="text" id="userID-input" readonly value="{{uid}}"/>
-  </div>
-    <div>
-    <button type="submit">Submit</button>
-  </div>
+</section>
 </form>
-
 <script src="/javascript/employeeset.js"></script>

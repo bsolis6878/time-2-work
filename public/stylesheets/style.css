@@ -25,9 +25,10 @@ body {
       rgba(237, 221, 221, 0.5)
     ),
     url("../images/run.avif");
-  background-size: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-attachment: relative;
-  background-position: -200px 0px;
+  /* background-position: -200px 0px; */
   position: relative;
   /* padding: 50px 0px; */
   /* min-height: 200px; */
@@ -54,7 +55,6 @@ body {
 
 /* .navbar-item {
   font-family: 'Cabin', sans-serif;
-
 } */
 
 /* .title {

@@ -213,6 +213,7 @@ router.get("/entrepreneur", (req, res) => {
             const employees = dbEmployeeData.map(post => post.get({ plain: true }))
             res.render("entrepreneur", {
                 employees,
+                name: req.sessionStore.username,
                 loggedIn: req.session.loggedIn
             });
         })
