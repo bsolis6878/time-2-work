@@ -21,7 +21,7 @@ async function signupFormHandler(event) {
       });
    
       if (response.ok) {
-        document.location.replace('/');
+        response.redirect('/');
       } else {
         alert(response.statusText);
       }

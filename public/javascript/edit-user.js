@@ -29,7 +29,7 @@ async function editUserHandler(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('/manage');
     } else {
       alert(response.statusText);
     }

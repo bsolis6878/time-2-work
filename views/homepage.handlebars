@@ -1,3 +1,13 @@
+{{#if loggedIn}}
+<h1>Currently Signed in as: {{name}}</h1>
+<h1>Currently in as: {{role}}</h1>
+<h1>Currently  in as: {{company}}</h1>
+{{#if rid}}
+test yes
+{{else}}
+ <a href="setrole" type="button"> SET YOUR ROLE</a>
+{{/if}}
+{{/if}}
 <section class="hero is-link is-fullheight-with-navbar">
   <div class="hero-body">
     <div class="columns">
@@ -21,28 +31,8 @@
 
   </div>
 <div class="signed-in">
-{{#if loggedIn}}
-<h1>Currently Signed in as: {{name}}</h1>
-<h1>Currently in as: {{role}}</h1>
-<h1>Currently  in as: {{company}}</h1>
-{{#if rid}}
-test yes
-{{else}}
- <a href="setrole" type="button"> CHOOSE YOUR ROLE</a>
-{{/if}}
 
 
 
-{{/if}}
 
-{{!-- <div class="signed-in">
-    {{#if loggedIn}}
-      <h1>Currently Signed in as: {{name}}</h1>
-      <h1>Currently in as: {{role}}</h1>
-      <h1>Currently in as: {{company}}</h1>
-      {{#if role}}
-        <a href="/entrepreneur">Test</a>
-      {{/if}}
-    {{/if}}
 
-  </div> --}}

@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const sequelize = require('../config/connection');
 
 const { Employee, User, Timelog, Job, Role, Company } = require("../models");
 
@@ -141,11 +142,50 @@ router.get('/setrole', (req, res) => {
     res.status(500).json(err);
   });
     });
-
+    // router.get('/:id', (req, res) => {
+    //   User.destroy({
+    //     where: {
+    //       id: req.params.id,
+    //     },
+    //   })
+    //     .then((dbUserData) => {
+    //       if (!dbUserData) {
+    //         res.status(404).json({ message: "No user found with this id" });
+    //         return;
+    //       }
+    //       res.json(dbUserData);
+    //     })
+    //     .catch((err) => {
+    //       console.log(err);
+    //       res.status(500).json(err);
+    //     });
+    // });
 
 router.get('/edit/:id', (req, res) => {
- res.render('edit');
-   });
+  User.findByPk( req.params.id,{
+    attributes:[
+    'id',
+    'username',
+    'email',
+    'password',
+    'name',
+    'addr1',
+    'phone_number',
+    'tax_id'
+  ]
+})
+.then(dbUserData => {
+  const user = dbUserData.get({ plain: true });
+ res.render('edit', {
+  user,
+  loggedIn: req.session.loggedIn
+ });
+})
+   .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+});
+});
 
 
 router.get('/login', (req, res) => {
@@ -185,13 +225,27 @@ router.get("/entrepreneur", (req, res) => {
 // renders team lead page
 router.get("/team-lead", (req, res) => {
     Employee.findAll({
-        attributes: ["company_id", "user_id", "role_id", "manager_id"],
-      })
+        attributes: ["company_id", "user_id", "role_id", "manager_id",],
+     include: [
+          {
+            model: Role,
+            attributes: ['role_name']
+          },
+          {
+           
+              model: User,
+              attributes: ['name']
+            
+          }
+        ]
+        })
         .then(dbEmployeeData => {
             // passes employee data into the entrepreneur page
             const employees = dbEmployeeData.map(employee => employee.get({ plain: true }))
+            console.log(dbEmployeeData.roles);
             res.render("team-lead", {
                 employees,
+                name: req.session.username,
                 loggedIn: req.session.loggedIn
             });
         })
@@ -252,7 +306,7 @@ router.get("/manage", (req, res) => {
 router.get("/paycheck", (req, res) => {
   Timelog.findAll({
     where: {
-      employee_id: 1
+      employee_id: req.session.employee_id
     },
     attributes: ["id", "company_id", "employee_id", "job_id", "minutes_worked"],
     include: [
@@ -266,7 +320,9 @@ router.get("/paycheck", (req, res) => {
         // passes employee data into the entrepreneur page
         const timelogs = dbTimelogData.map(timelog => timelog.get({ plain: true }))
         res.render("paycheck", {
-            timelogs
+            timelogs,
+            loggedIn: req.session.loggedIn,
+            name: req.session.username
         });
     })
     .catch(err => {
