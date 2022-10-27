@@ -5,12 +5,11 @@
   <div class="columns">
     <div class="column is-half">
 
-      <div class="title is-size-5 mt-3">Fill in and submit </div>
+      <div class="title is-size-5 mt-3">Update and submit user</div>
 
       <div class="edit-form">
-
         <div class="field">
-          <label class="label" for="name-edit">New Name</label>
+          <label class="label" for="name-edit">Name</label>
           <div class="control">
             <input
               name="name-edit"
@@ -24,7 +23,7 @@
         </div>
 
         <div class="field">
-          <label class="label" for="username-edit">New Username</label>
+          <label class="label" for="username-edit">Username</label>
           <div class="control has-icons-left has-icons-right">
             <input
               name="username-edit"
@@ -37,35 +36,29 @@
             <span class="icon is-small is-left">
               <i class="fas fa-user"></i>
             </span>
-            <span class="icon is-small is-right">
-              <i class="fas fa-check"></i>
-            </span>
           </div>
         </div>
 
         <div class="field">
-          <label class="label" for="password-edit">New Password</label>
+          <label class="label" for="password-edit">Password</label>
           <div class="control has-icons-left has-icons-right">
             <input
               name="password-edit"
               class="input"
               type="password"
               id="password-edit"
-              placeholder="Please enter a username"
+              placeholder="Please enter a password"
               value="{{password}}"
             />
             <span class="icon is-small is-left">
-              <i class="fas fa-user"></i>
-            </span>
-            <span class="icon is-small is-right">
-              <i class="fas fa-check"></i>
+              <i class="fas fa-lock"></i>
             </span>
 
           </div>
         </div>
 
         <div class="field">
-          <label class="label" for="email-edit">New Email</label>
+          <label class="label" for="email-edit">Email</label>
           <div class="control has-icons-left has-icons-right">
             <input
               name="email-edit"
@@ -82,7 +75,7 @@
         </div>
 
         <div class="field">
-          <label class="label" for="address-edit">New Address</label>
+          <label class="label" for="address-edit">Address</label>
           <div class="control has-icons-left has-icons-right">
             <input
               name="address-edit"
@@ -93,13 +86,13 @@
               value="{{address}}"
             />
             <span class="icon is-small is-left">
-              <i class="fas fa-envelope"></i>
+              <i class="fa-solid fa-location-dot"></i>
             </span>
           </div>
         </div>
 
         <div class="field">
-          <label class="label" for="phone-edit">New Number</label>
+          <label class="label" for="phone-edit">Phone Number</label>
           <div class="control has-icons-left has-icons-right">
             <input
               class="input"
@@ -110,13 +103,13 @@
               value="{{phone}}"
             />
             <span class="icon is-small is-left">
-              <i class="fas fa-envelope"></i>
+              <i class="fa-solid fa-phone"></i>
             </span>
           </div>
         </div>
 
         <div class="field">
-          <label class="label" for="tax-edit">New Tax-ID (SSN/EIN)</label>
+          <label class="label" for="tax-edit">Tax-ID (SSN/EIN)</label>
           <div class="control has-icons-left has-icons-right">
             <input
               class="input"
@@ -127,7 +120,7 @@
               value="{{tax_id}}"
             />
             <span class="icon is-small is-left">
-              <i class="fas fa-envelope"></i>
+              <i class="fa-solid fa-fingerprint"></i>
             </span>
           </div>
         </div>
