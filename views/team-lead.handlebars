@@ -1,44 +1,52 @@
-<div class="signed-in pl-5 pt-4">
-    {{#if loggedIn}}
-<h1>Currently Signed in as: {{name}}</h1>
-{{/if}}
-</div>
+<section class="has-background-info-light"></section>
+<section
+  class="hero is-fullheight-with-navbar has-background-grey-lighter px-5 py-5"
+>
+  <div class="columns">
+    <div class="column is-half">
 
-<div class="company"></div>
+      <div class="signed-in pl-5 pt-4">
+        {{#if loggedIn}}
+          <h1>Currently Signed in as: {{name}}</h1>
+        {{/if}}
+      </div>
 
-<div role="team-lead" class="is-size-5 pl-5 pt-4">Role: Team Leader</div>
+      <div class="company"></div>
 
-<nav>
-    <ul>
-    <li class="is-size-4 pt-5 pl-5">
-       <a href="/task">Work</a> 
-    </li>
-    <li class="is-size-4 pt-5 pl-5">
-        <a href="/paycheck">View Paycheck</a> 
-    </li>
-    </ul>
-</nav>
+      <div role="team-lead" class="is-size-5 pl-5 pt-4">Role: Team Leader</div>
 
-<div class="manage-employees pl-5 pt-4">
-    <table class="user-table table is-bordered is-striped">
-    <thred>
-       <th>#</th>
-       <th>User</th>
-       <th>Role</th>
- 
-     
-    </thred>
+      <nav>
+        <ul>
+          <li class="is-size-4 pt-5 pl-5">
+            <a href="/task">Work</a>
+          </li>
+          <li class="is-size-4 pt-5 pl-5">
+            <a href="/paycheck">View Paycheck</a>
+          </li>
+        </ul>
+      </nav>
 
-<tbody>
-{{#each employees}}
-<tr>
-    <th>{{this.user_id}}</th>
-    <td>{{this.user.name}}</td>
-    <td>{{this.role.role_name}}</td>
+      <div class="manage-employees pl-5 pt-4">
+        <table class="user-table table is-bordered is-striped">
+          <thred>
+            <th>#</th>
+            <th>User</th>
+            <th>Role</th>
 
+          </thred>
 
-</tr>
-{{/each}}
-</tbody>
-</table>
-</div>
+          <tbody>
+            {{#each employees}}
+              <tr>
+                <th>{{this.user_id}}</th>
+                <td>{{this.user.name}}</td>
+                <td>{{this.role.role_name}}</td>
+
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
