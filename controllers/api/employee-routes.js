@@ -53,6 +53,8 @@ router.post("/", (req, res) => {
           req.session.company_id = dbUserData.company_id;
           //req.session.company = dbUserData.employee.dataValues.company_id;
           req.session.loggedIn = true;
+
+
     })
 
   });
