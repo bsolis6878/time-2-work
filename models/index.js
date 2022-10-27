@@ -8,11 +8,12 @@ const User = require("./User");
 
 // create associations
 
-module.exports = { User, Company, Role, Employee };
 // Model -User
 //// User to Employee
 Employee.belongsTo(User, {
   foreignKey: "user_id",
+  onDelete: "CASCADE",
+  onUpdate: "CASCADE",
 });
 
 User.hasMany(Employee, {
@@ -24,6 +25,8 @@ User.hasMany(Employee, {
 // Model - Role
 Employee.belongsTo(Role, {
   foreignKey: "role_id",
+  onDelete: "CASCADE",
+  onUpdate: "CASCADE",
 });
 
 Role.hasMany(Employee, {
@@ -34,6 +37,8 @@ Role.hasMany(Employee, {
 
 Role.belongsTo(Company, {
   foreignKey: "company_id",
+  onDelete: "CASCADE",
+  onUpdate: "CASCADE",
 });
 
 Company.hasMany(Role, {
@@ -45,6 +50,8 @@ Company.hasMany(Role, {
 // Model - Job
 Job.belongsTo(Company, {
   foreignKey: "company_id",
+  onDelete: "CASCADE",
+  onUpdate: "CASCADE",
 });
 
 Company.hasMany(Job, {
@@ -56,6 +63,8 @@ Company.hasMany(Job, {
 // Model - Company
 Employee.belongsTo(Company, {
   foreignKey: "company_id",
+  onDelete: "CASCADE",
+  onUpdate: "CASCADE",
 });
 
 Company.hasMany(Employee, {
@@ -67,6 +76,8 @@ Company.hasMany(Employee, {
 // Model - Timelog
 Timelog.belongsTo(Company, {
   foreignKey: "company_id",
+  onDelete: "CASCADE",
+  onUpdate: "CASCADE",
 });
 
 Company.hasMany(Timelog, {
@@ -77,6 +88,8 @@ Company.hasMany(Timelog, {
 
 Timelog.belongsTo(Employee, {
   foreignKey: "employee_id",
+  onDelete: "CASCADE",
+  onUpdate: "CASCADE",
 });
 
 Employee.hasMany(Timelog, {
@@ -87,6 +100,8 @@ Employee.hasMany(Timelog, {
 
 Timelog.belongsTo(Job, {
   foreignKey: "job_id",
+  onDelete: "CASCADE",
+  onUpdate: "CASCADE",
 });
 
 Job.hasMany(Timelog, {
@@ -98,6 +113,8 @@ Job.hasMany(Timelog, {
 // Model - Employee
 Employee.belongsTo(Employee, {
   foreignKey: "manager_id",
+  onDelete: "CASCADE",
+  onUpdate: "CASCADE",
 });
 
 module.exports = { Company, Employee, Job, Role, Timelog, User };

@@ -1,12 +1,17 @@
-<section class="has-background-grey-lighter nav-bottom-space"></section>
-<section class="has-background-grey-lighter px-5 py-5">
-  <div class="title is-size-5">Fill in and submit to Add Jobs</div>
+<section class="has-background-info-light"></section>
+<section
+  class="hero is-fullheight-with-navbar has-background-grey-lighter px-5 py-5"
+>
+  <div class="columns">
+    <div class="column is-half">
 
-<form class="job-form">
+      <div class="title is-size-5 mt-3">Fill in and submit to Add Jobs</div>
+
+<div class="job-form">
   <div class="field">
     <label class="label" for="company-choice">Company Name:</label>
     <div class="control">
-      <select type="select" placeholder="Text input" id="company-choice">
+      <select type="select is-dark" placeholder="Text input" id="company-choice">
         {{#each company}}
         <option value="{{this.id}}">
               {{this.name}}
@@ -15,10 +20,10 @@
       </select>
     </div>
   </div>
+</div>
 
 
-
-<form class="job-form">
+<div class="job-form">
   <div class="field">
     <label class="label" for="job-input">New Job Title:</label>
    
@@ -48,7 +53,10 @@
       <button class="button is-light">Cancel</button>
     </div>
   </div>
-</form>
+</div>
+</div>
+</div>
+</div>
 </section>
 
 <script src="/javascript/job.js"></script>
