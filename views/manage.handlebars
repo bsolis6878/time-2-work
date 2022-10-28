@@ -1,9 +1,8 @@
 <section class="has-background-info-light"></section>
 <section
-  class="hero hero-tile is-fullheight-with-navbar has-background-grey-lighter px-5 py-5"
+  class="hero is-fullheight-with-navbar has-background-grey-lighter px-5 py-5"
 >
-  <div class="columns">
-    <div class="column is-centered">
+<div class="">
 
       {{#each user}}
         <div class="card my-5">
@@ -41,13 +40,12 @@
           </div>
           <footer class="card-footer">
             <a href="edit/{{this.id}}" class="card-footer-item">Edit</a>
-            {{!-- <a href="/{{this.id}}" class="delete-post-btn card-footer-item">Delete</a> --}}
+            <a href="" class="card-footer-item"><span class="delete-post-btn">Delete</span></a>
           </footer>
         </div>
       {{/each}}
 
-    </div>
-  </div>
+ </div>
 </section>
 
   <script src="/javascript/delete.js"></script>

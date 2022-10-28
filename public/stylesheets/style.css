@@ -15,34 +15,33 @@ body {
 }
 
 .hero {
-  /* background-image: linear-gradient(
-      rgba(183, 173, 173, 0.5),
-      rgba(228, 211, 211, 0.5)
-    ),
-    url(../images/run.avif); */
-  background-image: linear-gradient(
+  /* background: url("../images/run.avif"),
+    );
+
+  background-position: 4px 4px, 0px 0px; */
+
+  background: linear-gradient(
       rgba(235, 225, 225, 0.5),
       rgba(237, 221, 221, 0.5)
     ),
     url("../images/run.avif");
+  background-position: 0px 0px, 0px 0px;
+
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: relative;
+  /* background-attachment: relative; */
   /* background-position: -200px 0px; */
-  position: relative;
-  /* padding: 50px 0px; */
-  /* min-height: 200px; */
-  /* align-items: center; */
+  /* position: relative; */
 }
 
-.hero-tile {
-  background-image: linear-gradient(
+/* .hero-tile {
+  background: linear-gradient(
       rgba(235, 225, 225, 0.5),
       rgba(237, 221, 221, 0.5)
     ),
     url("../images/pattern_tile2.png");
   background-repeat: repeat;
-}
+} */
 
 .nav-bottom-space {
   padding-top: 1rem;
@@ -158,14 +157,14 @@ input,
 @media screen and (max-width: 980px) {
 }
 
-/* @media screen and (max-width: 768px) {
-  body,
-  html {
-  }
-} */
+@media screen and (max-width: 768px) {
+  /* .hero {
+    background-position: -50px 0px;
+  } */
+}
 
 @media screen and (max-width: 575px) {
   .hero {
-    background-position: -550px 0px;
+    background-position: 0px 0px, -250px 0px;
   }
 }

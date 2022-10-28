@@ -52,27 +52,26 @@ router.post("/", (req, res) => {
     addr1: req.body.addr1,
     phone_number: req.body.phone_number,
     tax_id: req.body.tax_id,
-    
-  
-  include: [
-    {
-      model: Employee,
-      attributes: ['id', 'company_id', 'role_id', 'manager_id','user_id'],
-      include: {
-        model: User,
-        attributes: ['username']
+
+    include: [
+      {
+        model: Employee,
+        attributes: ["id", "company_id", "role_id", "manager_id", "user_id"],
+        include: {
+          model: User,
+          attributes: ["username"],
+        },
+        include: {
+          model: Role,
+          attributes: ["role_name"],
+        },
+        include: {
+          model: Company,
+          attributes: ["name"],
+        },
       },
-      include: {
-        model: Role,
-        attributes: ['role_name']
-      },
-      include: {
-        model: Company,
-        attributes: ['name']
-      }
-    },
-  ],
-})
+    ],
+  })
     .then((dbUserData) => {
       // creates session using cookies upon account creation
       req.session.save(() => {
@@ -81,7 +80,7 @@ router.post("/", (req, res) => {
         req.session.loggedIn = true;
 
         res.json(dbUserData);
-    });
+      });
     })
     .catch((err) => {
       console.log(err);
@@ -95,22 +94,22 @@ router.post("/login", (req, res) => {
     include: [
       {
         model: Employee,
-        attributes: ['id', 'company_id', 'role_id', 'manager_id','user_id'],
+        attributes: ["id", "company_id", "role_id", "manager_id", "user_id"],
         include: {
           model: User,
-          attributes: ['username']
+          attributes: ["username"],
         },
         include: {
           model: Role,
-          attributes: ['role_name']
+          attributes: ["role_name"],
         },
         include: {
           model: Company,
-          attributes: ['name']
-        }
+          attributes: ["name"],
+        },
       },
     ],
-    
+
     where: {
       email: req.body.email,
     },
@@ -121,7 +120,6 @@ router.post("/login", (req, res) => {
     }
 
     const validPassword = dbUserData.checkPassword(req.body.password);
-    
 
     if (!validPassword) {
       res.status(400).json({ message: "Incorrect password!" });
@@ -137,31 +135,42 @@ router.post("/login", (req, res) => {
       req.session.company_id = dbUserData.employees[0].company_id;
       //req.session.company = dbUserData.employee.dataValues.company_id;
       req.session.loggedIn = true;
-    
 
-      res.json({ user: dbUserData, message: 'You are now logged in!' });
+      res.json({ user: dbUserData, message: "You are now logged in!" });
+    });
   });
-  });
+});
+
+// Gabe: Moved this above the put /:id
+router.post("/logout", (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
 });
 
 // update user route
 router.put("/:id", (req, res) => {
   // pass in req.body instead to only update what's passed through
-  User.update( 
-   {
-    username: req.body.username,
-    email: req.body.email,
-    password: req.body.password,
-    name: req.body.name,
-    address: req.body.addr1,
-    phone: req.body.phone_number,
-    tax_id: req.body.tax_id
-   },
-   {
-    where: {
-      id: req.params.id,
+  User.update(
+    {
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password,
+      name: req.body.name,
+      address: req.body.addr1,
+      phone: req.body.phone_number,
+      tax_id: req.body.tax_id,
     },
-  })
+    {
+      where: {
+        id: req.params.id,
+      },
+    }
+  )
     .then((dbUserData) => {
       if (!dbUserData[0]) {
         res.status(404).json({ message: "No user found with this id" });
@@ -195,20 +204,9 @@ router.delete("/:id", (req, res) => {
     });
 });
 
-
-router.post('/logout', (req, res) => {
-  if (req.session.loggedIn) {
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  }
-  else {
-    res.status(404).end();
-  }
-});
-
-router.put = (req, res) => {
-  res
-}
+// Gabe: Not sure why this is in here
+// router.put = (req, res) => {
+//   res
+// }
 
 module.exports = router;
