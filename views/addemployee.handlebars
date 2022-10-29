@@ -10,12 +10,13 @@
   <div class="employee-form">
     <div class="field">
       <label class="label"for="company-input">Company</label>
-      <div class="control">
-        <input
-          class="input"
-          type="text"
-          placeholder="Enter the company name"
-        />
+    <select type="select" id="company-choice">
+              {{#each company}}
+                <option value="{{this.id}}">
+                  {{this.name}}
+                </option>
+              {{/each}}
+            </select>
       </div>
     </div>
 
@@ -75,6 +76,31 @@
     </div>
   </div>
 </section>
+
+
+<div class="paycheck is-size-5 pl-5 pt-5">
+    <table class="pay-table table is-bordered is-striped" >
+    <thred>
+       <th>#</th>
+       <th>Username</th>
+       <th>name</th>
+       <th>Created At</th>
+    </thred>
+
+<tbody>
+{{#each company}}
+<tr>
+    <td>{{this.user.id}}</td>
+    <td>{{this.user.username}}</td>
+    <td>{{this.user.name}}</td>
+    <td>{{this.user.createdAt}}</td>
+
+</tr>  
+{{/each}}
+
+</tbody>
+</table>
+</div>
 
 
 <script src="/javascript/employee.js"></script>

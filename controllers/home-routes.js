@@ -23,9 +23,8 @@ router.get("/", (req, res) => {
   })
     .then((dbUserData) => {
       const user = dbUserData.map((user) => user.get({ plain: true }));
-      const employee = dbUserData.map((employee) =>
-        employee.get({ plain: true })
-      );
+    
+
       if (req.session.role === 1) {
         res.redirect("/entrepreneur");
       } else if (req.session.role === 2) {
@@ -34,9 +33,10 @@ router.get("/", (req, res) => {
         res.redirect("/employee");
       } else
         res.render("homepage", {
+          user,
           loggedIn: req.session.loggedIn,
           name: req.session.username,
-          rid: req.session.role_id,
+          rid: req.session.role_id
         });
     })
     .catch((err) => {
@@ -68,24 +68,25 @@ router.get("/signup", (req, res) => {
 
 router.get("/manage", withAuth, (req, res) => {
   console.log("======================");
-  User.findAll({
-    attributes: [
-      "id",
-      "username",
-      "email",
-      "password",
-      "name",
-      "addr1",
-      "phone_number",
-      "tax_id",
-    ],
-    include: [
+  Employee.findAll({
+    attributes: ['id','company_id','role_id', 'manager_id', 'user_id'],
+    include:[
       {
-        model: Employee,
-        attributes: ["id", "company_id", "role_id", "manager_id", "user_id"],
+        model: User,
+        attributes: ['id', 'username', 'email', 'phone_number', 'addr1', 'name', 'createdAt', 'updatedAt'],
       },
-    ],
+      {
+        model: Role,
+        attributes: ['id', 'role_name'],
+      },
+      {
+        model: Company,
+        attributes: ['id', 'name']
+      }
+      
+    ]
   })
+
     .then((dbUserData) => {
       const user = dbUserData.map((user) => user.get({ plain: true }));
       const employee = dbUserData.map((employee) =>
@@ -185,15 +186,34 @@ router.get("/employee", (req, res) => {
 
 // renders entrepreneur page
 router.get("/entrepreneur", (req, res) => {
-  Employee.findAll({
-    attributes: ["company_id", "user_id", "role_id", "manager_id"],
-  })
-    .then((dbEmployeeData) => {
+    Employee.findAll({
+      attributes: ['id','company_id','role_id', 'manager_id', 'user_id'],
+      include:[
+        {
+          model: User,
+          attributes: ['id', 'username', 'name', 'createdAt', 'updatedAt'],
+        },
+        {
+          model: Role,
+          attributes: ['id', 'role_name'],
+        },
+        {
+          model: Company,
+          attributes: ['id', 'name']
+        }
+        
+      ]
+    })
+  
+    .then((dbUserData) => {
       // passes employee data into the entrepreneur page
-      const employees = dbEmployeeData.map((post) => post.get({ plain: true }));
+   
+    const user = dbUserData.map((employee) => employee.get({ plain: true }));
+    const userNoRole = dbUserData.map((post) => post.get({ plain: true }));
+    console.log(user);
       res.render("entrepreneur", {
-        employees,
-        name: req.sessionStore.username,
+        user,
+        name: req.session.username,
         loggedIn: req.session.loggedIn,
       });
     })
@@ -330,7 +350,28 @@ router.get("/addcompany", (req, res) => {
 
 //renders add employee page
 router.get("/addemployee", (req, res) => {
-  res.render("addemployee");
+  Company.findAll({
+    attributes: [
+      'id',
+      'name',
+      'addr1',
+      'phone_number']
+      // include: [
+      //   {
+      //     model: User,
+      //     attributes: ['id', 'username', 'name' , 'createdAt']
+      //   }
+      // ]
+    
+  }).then((dbCompanyData) => {
+    const company = dbCompanyData.map((companies) => companies.get({plain:true}));
+
+  res.render("addemployee", {
+    company,
+    name: req.session.username,
+    loggedIn: req.session.loggedIn,
+  });
+  })
 });
 
 module.exports = router;

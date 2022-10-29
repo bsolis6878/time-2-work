@@ -6,8 +6,8 @@ async function deleteFormHandler(event) {
   const id = window.location.toString().split("/")[
     window.location.toString().split("/").length - 1
   ];
-  const response = await fetch(`/api/users/${id}`, {
-    method: "DELETE",
+  const response = await fetch(`/api/employees/${id}`, {
+    method: "DELETE"
   });
 
   if (response.ok) {
