@@ -17,12 +17,27 @@ async function loginFormHandler(event) {
     if (response.ok) {
       document.location.replace("/");
     } else {
-      alert(response.statusText);
+      // replaced with modal
+      // alert(response.statusText);
+
+      // Having error write to console for debugging
+      console.log(response.statusText);
+
+      console.log(response);
+      // Creating modal for user to inform them of the incorrect password.
+
+      // function in script.js to create modal.
+      // input title, body, button label
+      openModal(
+        "Login Error",
+        "The username and/or password as incorrect.",
+        "OK"
+      );
     }
   }
 }
 
-console.log("script: login.js");
+console.log("login.js");
 document
   .querySelector(".login-form")
   .addEventListener("submit", loginFormHandler);
