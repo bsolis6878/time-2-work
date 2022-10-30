@@ -1,11 +1,15 @@
+
+
+<section class="hero is-fullheight-with-navbar">
+
+  <div class="hero-body">
+    <div class="columns">
+      <div class="column">  
 {{#if loggedIn}}
 <h1>Currently Signed in as: {{name}}</h1>
 <h2>Please wait for your Employeer to set your role</h2>
+<h3>Set your role here <a href="/setrole">"Set role"</a> if you do not have a Employeer yet.</h3>
 {{/if}}
-<section class="hero is-fullheight-with-navbar">
-  <div class="hero-body">
-    <div class="columns">
-      <div class="column">
         <p class="title bd-notification is-info has-text-black is-size-4-mobile	">
           Time tracking made simple.</p>
         <div class="columns is-mobile">
