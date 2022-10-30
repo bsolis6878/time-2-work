@@ -7,16 +7,11 @@
 
   <div class="title is-size-5 mt-3">Fill in and submit to Add Employee</div>
 
-  <div class="employee-form">
+  <div>
+    <form class="employee-form">
     <div class="field">
       <label class="label"for="company-input">Company</label>
-    <select type="select" id="company-choice">
-              {{#each company}}
-                <option value="{{this.id}}">
-                  {{this.name}}
-                </option>
-              {{/each}}
-            </select>
+      <input type="text" id="company-input" readonly value="1" />
       </div>
     </div>
 
@@ -26,8 +21,9 @@
         <input
           class="input"
           type="text"
-          placeholder="Please enter a role"
+          placeholder="1 = Employeer 2 = Team Leader 3 = Employee"
           value=""
+          id="roleID-input"
         />
         <span class="icon is-small is-left">
           <i class="fas fa-user"></i>
@@ -41,8 +37,9 @@
         <input
           class="input"
           type="text"
-          placeholder="Please enter a manager"
+          placeholder="Type 1 for Employeer"
           value=""
+          id="manager-input"
         />
         <span class="icon is-small is-left">
           <i class="fas fa-user"></i>
@@ -53,15 +50,14 @@
     <div class="field">
       <label class="label" for="userID-input">User</label>
       <div class="control has-icons-left has-icons-right">
-        <input
-          class="input"
-          type="password"
-          placeholder="Please enter a user"
-          value=""
-        />
-        <span class="icon is-small is-left">
-          <i class="fas fa-user"></i>
-        </span>
+        <select id="userID-input">
+                {{#each users}}
+                  <option value="{{this.id}}">
+                    {{this.name}}
+                  </option>
+                {{/each}}
+              </select>
+
       </div>
     </div>
 
@@ -74,33 +70,9 @@
         <button class="button is-light">Cancel</button>
       </div>
     </div>
+    </form>
   </div>
 </section>
-
-
-<div class="paycheck is-size-5 pl-5 pt-5">
-    <table class="pay-table table is-bordered is-striped" >
-    <thred>
-       <th>#</th>
-       <th>Username</th>
-       <th>name</th>
-       <th>Created At</th>
-    </thred>
-
-<tbody>
-{{#each company}}
-<tr>
-    <td>{{this.user.id}}</td>
-    <td>{{this.user.username}}</td>
-    <td>{{this.user.name}}</td>
-    <td>{{this.user.createdAt}}</td>
-
-</tr>  
-{{/each}}
-
-</tbody>
-</table>
-</div>
 
 
 <script src="/javascript/employee.js"></script>

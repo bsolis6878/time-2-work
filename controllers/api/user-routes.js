@@ -43,7 +43,7 @@ router.post("/", (req, res) => {
   //           "addr1": "106 Broadway, San Antonio TX 78254",
   //           "phone_number": "555-555-5555",
   //           "tax_id": "123-45-6005" }
-
+                                
   User.create({
     username: req.body.username,
     email: req.body.email,
@@ -96,16 +96,12 @@ router.post("/login", (req, res) => {
         model: Employee,
         attributes: ["id", "company_id", "role_id", "manager_id", "user_id"],
         include: {
-          model: User,
-          attributes: ["username"],
-        },
-        include: {
           model: Role,
-          attributes: ["role_name"],
+          attributes: ["id","role_name"],
         },
         include: {
           model: Company,
-          attributes: ["name"],
+          attributes: ["id","name"],
         },
       },
     ],
@@ -130,7 +126,7 @@ router.post("/login", (req, res) => {
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
       req.session.username = dbUserData.username;
-      console.log(dbUserData.employees.role_id)
+      console.log(dbUserData.employees)
       req.session.role = dbUserData.employees[0].role_id;
       req.session.employee_id = dbUserData.employees[0].id;
       req.session.company_id = dbUserData.employees[0].company_id;

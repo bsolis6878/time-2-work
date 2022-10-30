@@ -350,26 +350,20 @@ router.get("/addcompany", (req, res) => {
 
 //renders add employee page
 router.get("/addemployee", (req, res) => {
-  Company.findAll({
+  User.findAll({
     attributes: [
       'id',
-      'name',
-      'addr1',
-      'phone_number']
-      // include: [
-      //   {
-      //     model: User,
-      //     attributes: ['id', 'username', 'name' , 'createdAt']
-      //   }
-      // ]
+      'name']
+
     
-  }).then((dbCompanyData) => {
-    const company = dbCompanyData.map((companies) => companies.get({plain:true}));
+  }).then((dbUserData) => {
+    const users = dbUserData.map((user) => user.get({plain:true}));
 
   res.render("addemployee", {
-    company,
+    users,
+    cid: req.session.company_id,
     name: req.session.username,
-    loggedIn: req.session.loggedIn,
+    loggedIn: req.session.loggedIn
   });
   })
 });
