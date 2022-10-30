@@ -149,6 +149,11 @@ input,
   font-size: 23px;
 } */
 
+/* To override bulma which disable clicks on icons for password show/hide */
+#eye-toggle {
+  pointer-events: auto;
+}
+
 /* media quiries */
 
 @media screen and (max-width: 1700px) {

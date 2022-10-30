@@ -22,7 +22,7 @@
 
         <div class="field">
           <label class="label">Username</label>
-          <div class="control has-icons-left has-icons-right">
+          <div class="control has-icons-left">
             <input
               class="input"
               type="text"
@@ -49,12 +49,15 @@
             <span class="icon is-small is-left">
               <i class="fas fa-lock"></i>
             </span>
+            <span class="icon is-small is-right">
+              <i id="eye-toggle" class="fas fa-eye"></i>
+            </span>
           </div>
         </div>
 
         <div class="field">
           <label class="label">Email</label>
-          <div class="control has-icons-left has-icons-right">
+          <div class="control has-icons-left">
             <input
               class="input"
               type="email"
@@ -70,7 +73,7 @@
 
         <div class="field">
           <label class="label">Address</label>
-          <div class="control has-icons-left has-icons-right">
+          <div class="control has-icons-left">
             <input
               class="input"
               type="text"
@@ -86,7 +89,7 @@
 
         <div class="field">
           <label class="label">Phone Number</label>
-          <div class="control has-icons-left has-icons-right">
+          <div class="control has-icons-left">
             <input
               class="input"
               type="tel"
@@ -102,7 +105,7 @@
 
         <div class="field">
           <label class="label">Tax-ID (SSN/EIN)</label>
-          <div class="control has-icons-left has-icons-right">
+          <div class="control has-icons-left">
             <input
               class="input"
               type="text"
@@ -130,4 +133,27 @@
 
   </section>
 </form>
+
+
+ {{!-- Modal alert --}}
+<div class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class='modal-card'>
+      <header class='modal-card-head'>
+        <p class='modal-card-title'>
+          
+        </p>
+      </header>
+      <section class='modal-card-body is-size-4'>
+      </section>
+    <!-- Any other Bulma elements you want -->
+  </div>
+  <footer class='modal-card-foot'>
+    <button class="button modalButton">
+    </button>
+  </footer>
+</div>
+{{!-- End Modal alert --}}
+
 <script src="/javascript/create.js"></script>

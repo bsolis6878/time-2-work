@@ -1,3 +1,6 @@
+const eyeIconEl = document.querySelector("#eye-toggle");
+const passwordEl = document.querySelector("#password-login");
+
 async function loginFormHandler(event) {
   event.preventDefault();
 
@@ -17,15 +20,13 @@ async function loginFormHandler(event) {
     if (response.ok) {
       document.location.replace("/");
     } else {
-      // replaced with modal
+      // replaced with modal prompt
       // alert(response.statusText);
 
       // Having error write to console for debugging
       console.log(response.statusText);
 
-      console.log(response);
       // Creating modal for user to inform them of the incorrect password.
-
       // function in script.js to create modal.
       // input title, body, button label
       openModal(
@@ -37,7 +38,24 @@ async function loginFormHandler(event) {
   }
 }
 
-console.log("login.js");
+// toggles show/hide password
+function eyeToggle() {
+  const elType = passwordEl.getAttribute("type");
+
+  if (elType === "password") {
+    passwordEl.setAttribute("type", "text");
+  } else {
+    passwordEl.setAttribute("type", "password");
+  }
+
+  eyeIconEl.classList.toggle("fa-eye");
+  eyeIconEl.classList.toggle("fa-eye-slash");
+}
+
+eyeIconEl.addEventListener("click", () => {
+  eyeToggle();
+});
+
 document
   .querySelector(".login-form")
   .addEventListener("submit", loginFormHandler);

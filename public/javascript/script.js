@@ -3,6 +3,7 @@ const modalTitleEl = document.querySelector(".modal-card-title");
 const modalMessageEl = document.querySelector(".modal-card-body");
 const modalButtonEl = document.querySelector(".modalButton");
 
+// NAV bar Hamburger
 document.addEventListener("DOMContentLoaded", () => {
   // Get all "navbar-burger" elements
   const $navbarBurgers = Array.prototype.slice.call(
@@ -65,4 +66,4 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-console.log("Running script.js");
+console.log("Running public/script.js");
