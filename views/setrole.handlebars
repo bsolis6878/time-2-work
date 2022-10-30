@@ -1,15 +1,16 @@
-<section class="has-background-info-light"></section>
-<form class="employeeset-form">
 <section
   class="hero is-fullheight-with-navbar has-background-grey-lighter px-5 py-5"
 >
-  <div class="columns">
-    <div class="column is-half">
-      
+  <div class="hero-body">
+
+    <form class="employeeset-form">
+      <div class="title is-size-5 mt-3">New user role instructions</div>
       <div class="employeeset-form">
-        <div>
-          <label for="company-input">Company:</label>
-          <input type="text" id="company-input" readonly value="1" />
+        <div class="field">
+          <label class="label" for="company-input">Company:</label>
+          <div class="control">
+            <input type="text" id="company-input" readonly value="1" />
+          </div>
         </div>
         <div class="field">
           <label class="label">Role:</label>
@@ -25,7 +26,6 @@
             </div>
           </div>
         </div>
-
         <div>
           <label for="manager-input">Manager:</label>
           <input type="text" id="manager-input" readonly value="1" />
@@ -40,8 +40,8 @@
           <h2>Click submit and logout at the top right and log back in!</h2>
         </div>
       </div>
-    </div>
+
+    </form>
   </div>
 </section>
-</form>
 <script src="/javascript/employeeset.js"></script>

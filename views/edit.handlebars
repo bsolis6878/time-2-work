@@ -1,141 +1,139 @@
-<section class="has-background-info-light"></section>
 <section
   class="hero is-fullheight-with-navbar has-background-grey-lighter px-5 py-5"
 >
-  <div class="columns">
-    <div class="column is-half">
+  <div class="hero-body">
 
-      <div class="title is-size-5 mt-3">
-      Fill in and submit 
+    <div class="title is-size-5 mt-3">
+      Fill in and submit
+    </div>
+
+    <div class="edit-form">
+
+      <div class="field">
+        <label class="label" for="name-edit">Name</label>
+        <div class="control">
+          <input
+            name="name-edit"
+            class="input"
+            type="text"
+            id="name-edit"
+            placeholder="Please enter your full name"
+            value="{{this.username}}"
+          />
+        </div>
       </div>
 
-      <div class="edit-form">
-
-        <div class="field">
-          <label class="label" for="name-edit">Name</label>
-          <div class="control">
-            <input
-              name="name-edit"
-              class="input"
-              type="text"
-              id="name-edit"
-              placeholder="Please enter your full name"
-              value="{{this.username}}"
-            />
-          </div>
+      <div class="field">
+        <label class="label" for="username-edit">Username</label>
+        <div class="control has-icons-left">
+          <input
+            name="username-edit"
+            class="input"
+            type="text"
+            id="username-edit"
+            placeholder="Please enter a username"
+            value="{{username}}"
+          />
+          <span class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+          </span>
         </div>
+      </div>
 
-        <div class="field">
-          <label class="label" for="username-edit">Username</label>
-          <div class="control has-icons-left">
-            <input
-              name="username-edit"
-              class="input"
-              type="text"
-              id="username-edit"
-              placeholder="Please enter a username"
-              value="{{username}}"
-            />
-            <span class="icon is-small is-left">
-              <i class="fas fa-user"></i>
-            </span>
-          </div>
+      <div class="field">
+        <label class="label" for="password-edit">Password</label>
+        <div class="control has-icons-left has-icons-right">
+          <input
+            name="password-edit"
+            class="input"
+            type="password"
+            id="password-edit"
+            placeholder="Please enter a username"
+            value="{{password}}"
+          />
+          <span class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i id="eye-toggle" class="fas fa-eye"></i>
+          </span>
         </div>
+      </div>
 
-        <div class="field">
-          <label class="label" for="password-edit">Password</label>
-          <div class="control has-icons-left has-icons-right">
-            <input
-              name="password-edit"
-              class="input"
-              type="password"
-              id="password-edit"
-              placeholder="Please enter a username"
-              value="{{password}}"
-            />
-            <span class="icon is-small is-left">
-              <i class="fas fa-user"></i>
-            </span>
-            <span class="icon is-small is-right">
-              <i id="eye-toggle" class="fas fa-eye"></i>
-            </span>
-           </div>
+      <div class="field">
+        <label class="label" for="email-edit">Email</label>
+        <div class="control has-icons-left">
+          <input
+            name="email-edit"
+            class="input"
+            type="email"
+            id="email-edit"
+            placeholder="hello@time2work.com"
+            value="{{this.email}}"
+          />
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
         </div>
+      </div>
 
-        <div class="field">
-          <label class="label" for="email-edit">Email</label>
-          <div class="control has-icons-left">
-            <input
-              name="email-edit"
-              class="input"
-              type="email"
-              id="email-edit"
-              placeholder="hello@time2work.com"
-              value="{{this.email}}"
-            />
-            <span class="icon is-small is-left">
-              <i class="fas fa-envelope"></i>
-            </span>
-          </div>
+      <div class="field">
+        <label class="label" for="address-edit">Address</label>
+        <div class="control has-icons-left">
+          <input
+            name="address-edit"
+            class="input"
+            type="address"
+            id="address-edit"
+            placeholder="1234 Happy Circle, Happyville CA 12345"
+            value="{{address}}"
+          />
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
         </div>
+      </div>
 
-        <div class="field">
-          <label class="label" for="address-edit">Address</label>
-          <div class="control has-icons-left">
-            <input
-              name="address-edit"
-              class="input"
-              type="address"
-              id="address-edit"
-              placeholder="1234 Happy Circle, Happyville CA 12345"
-              value="{{address}}"
-            />
-            <span class="icon is-small is-left">
-              <i class="fas fa-envelope"></i>
-            </span>
-          </div>
+      <div class="field">
+        <label class="label" for="phone-edit">Number</label>
+        <div class="control has-icons-left">
+          <input
+            class="input"
+            name="number-edit"
+            type="tel"
+            id="number-edit"
+            placeholder="(555)555-5555"
+            value="{{phone}}"
+          />
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
         </div>
+      </div>
 
-        <div class="field">
-          <label class="label" for="phone-edit">Number</label>
-          <div class="control has-icons-left">
-            <input
-              class="input"
-              name="number-edit"
-              type="tel"
-              id="number-edit"
-              placeholder="(555)555-5555"
-              value="{{phone}}"
-            />
-            <span class="icon is-small is-left">
-              <i class="fas fa-envelope"></i>
-            </span>
-          </div>
+      <div class="field">
+        <label class="label" for="tax-edit">Tax-ID (SSN/EIN)</label>
+        <div class="control has-icons-left">
+          <input
+            class="input"
+            name="tax-edit"
+            type="text"
+            placeholder="9999999999"
+            id="tax-edit"
+            value="{{tax_id}}"
+          />
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
         </div>
+      </div>
 
-        <div class="field">
-          <label class="label" for="tax-edit">Tax-ID (SSN/EIN)</label>
-          <div class="control has-icons-left">
-            <input
-              class="input"
-              name="tax-edit"
-              type="text"
-              placeholder="9999999999"
-              id="tax-edit"
-              value="{{tax_id}}"
-            />
-            <span class="icon is-small is-left">
-              <i class="fas fa-envelope"></i>
-            </span>
-          </div>
+      <div class="field is-grouped my-5">
+        <div class="control">
+          <button class="button is-dark">Submit</button>
         </div>
-
-        <div class="field is-grouped my-5">
-          <div class="control">
-            <button class="button is-dark">Submit</button>
-          </div>
-          <div class="control">
-            <button class="button is-light">Cancel</button>
+        <div class="control">
+          <button class="button is-light">Cancel</button>
           {{!-- </div>
           <a href="/{{this.id}}" class="card-footer-item"><span class="delete-post-btn">Delete</span></a>--}}
         </div>
@@ -144,26 +142,28 @@
   </div>
 </section>
 
- {{!-- Modal alert --}}
+{{! Modal alert }}
 <div class="modal">
   <div class="modal-background"></div>
   <div class="modal-content">
-    <div class='modal-card'>
-      <header class='modal-card-head'>
-        <p class='modal-card-title'>
-          
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">
+
         </p>
       </header>
-      <section class='modal-card-body is-size-4'>
+      <section class="modal-card-body is-size-4">
       </section>
-    <!-- Any other Bulma elements you want -->
+      <!-- Any other Bulma elements you want -->
+
+      <footer class="modal-card-foot">
+        <button class="button modalButton">
+        </button>
+      </footer>
+    </div>
   </div>
-  <footer class='modal-card-foot'>
-    <button class="button modalButton">
-    </button>
-  </footer>
 </div>
-{{!-- End Modal alert --}}
+{{! End Modal alert }}
 
 <script src="/javascript/edit-user.js"></script>
 <script src="/javascript/delete.js"></script>
