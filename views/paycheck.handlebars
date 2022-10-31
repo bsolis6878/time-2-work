@@ -1,30 +1,44 @@
-<section class="has-background-info-light"></section>
 <section
   class="hero is-fullheight-with-navbar has-background-grey-lighter px-5 py-5"
 >
-<div class="signed-in">
-{{#if loggedIn}}
-<h1>Currently Signed in as: {{name}}</h1>
-{{/if}}
-</div>
+  <div class="hero-body is-align-items-stretch is-block">
 
-<div class="paycheck is-size-5 pl-5 pt-5">
-    <table class="pay-table table is-bordered is-striped" >
-    <thred>
-       <th>Job</th>
-       <th>Minutes</th>
-    </thred>
+    {{!-- <div class="signed-in">
+    {{#if loggedIn}}
+    <h1>Currently Signed in as: {{name}}</h1>
+    {{/if}}
+    </div> --}}
+    <div class="paycheck is-size-5 pl-5 pt-5">
+      <table class="pay-table table is-bordered is-striped">
+        <thred>
+          <th>Job</th>
+          <th>Minutes</th>
+        </thred>
 
-<tbody>
-{{#each timelogs}}
-<tr>
-    <td>{{this.job.job}}</td>
-    <td>{{this.minutes_worked}}</td>
+        <tbody>
+          {{#each timelogs}}
+            <tr>
+              <td>{{this.job.job}}</td>
+              <td>{{this.minutes_worked}}</td>
 
-</tr>  
-{{/each}}
+            </tr>
+          {{/each}}
+          <tr>
+            <td>Total:</td>
+            <td>{{this.total_minutes}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-</tbody>
-</table>
-</div>
+    <section class="section">
+      <div class="field">
+        <div class="control is-size-4 pb-2">
+          <a href="/employee">
+            <button class="button is-dark is-large">Back</button>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
 </section>
