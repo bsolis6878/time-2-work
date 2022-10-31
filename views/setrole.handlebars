@@ -1,7 +1,7 @@
 <section
   class="hero is-fullheight-with-navbar has-background-grey-lighter px-5 py-5"
 >
-  <div class="hero-body">
+  <div class="hero-body is-align-items-stretch">
 
     <form class="employeeset-form">
       <div class="title is-size-5 mt-3">New user role instructions</div>
@@ -9,13 +9,19 @@
         <div class="field">
           <label class="label" for="company-input">Company:</label>
           <div class="control">
-            <input type="text" id="company-input" readonly value="1" />
+            <input
+              class="input"
+              type="text"
+              id="company-input"
+              readonly
+              value="1"
+            />
           </div>
         </div>
         <div class="field">
           <label class="label">Role:</label>
           <div class="control">
-            <div class="select is-dark">
+            <div class="select">
               <select id="roleID-input">
                 {{#each roles}}
                   <option data-id="{{this.id}}" value="{{this.id}}">
@@ -26,19 +32,43 @@
             </div>
           </div>
         </div>
-        <div>
-          <label for="manager-input">Manager:</label>
-          <input type="text" id="manager-input" readonly value="1" />
+
+        <div class="field">
+          <label class="label" for="manager-input">Manager:</label>
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              id="manager-input"
+              readonly
+              value="1"
+            />
+          </div>
         </div>
-        <div>
-          <label for="userID-input">User:</label>
-          <input type="text" id="userID-input" readonly value="{{uid}}" />
+
+        <div class="field">
+          <label class="label" for="userID-input">User:</label>
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              id="userID-input"
+              readonly
+              value="{{uid}}"
+            />
+          </div>
         </div>
-        <div>
-          <button type="submit">Submit</button>
-          <h1>THIS REQUIRES A RELOG AFTER SUBMITTING FOR ROLE TO TAKE EFFECT!</h1>
-          <h2>Click submit and logout at the top right and log back in!</h2>
+
+        <div class="field is-grouped my-5">
+          <div class="control">
+            <button
+              class=".signup-form button is-dark"
+              type="submit"
+            >Submit</button>
+          </div>
         </div>
+        <h1>THIS REQUIRES A RELOG AFTER SUBMITTING FOR ROLE TO TAKE EFFECT!</h1>
+        <h2>Click submit and logout at the top right and log back in!</h2>
       </div>
 
     </form>

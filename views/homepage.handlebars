@@ -3,13 +3,14 @@
   <div class="hero-body">
     <div class="columns">
       <div class="column">
-        {{#if loggedIn}}
-          <h1>Currently Signed in as: {{name}}</h1>
-          <h2>Please wait for your Employeer to set your role</h2>
-          <h3>Set your role here
-            <a href="/setrole">"Set role"</a>
-            if you do not have a Employeer yet.</h3>
-        {{/if}}
+        <section class="pb-5">
+          {{#if loggedIn}}
+            <h2>Please wait for your Employeer to set your role</h2>
+            <h3>Set your role here
+              <a href="/setrole">"<u>Set role</u>"</a>
+              if you do not have a Employeer yet.</h3>
+          {{/if}}
+        </section>
         <p
           class="title bd-notification is-info has-text-black is-size-4-mobile"
         >

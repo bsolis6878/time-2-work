@@ -1,32 +1,34 @@
-<section class="has-background-info-light"></section>
 <section
   class="hero is-fullheight-with-navbar has-background-grey-lighter px-5 py-5"
 >
-  <div class="columns">
-    <div class="column is-half">
-
-      <div class="signed-in pl-5 pt-4">
+  <div class="hero-body is-align-items-stretch">
+    <section class="">
+      {{!-- <div class="signed-in pl-5 pt-4">
         {{#if loggedIn}}
           <h1>Currently Signed in as: {{name}}</h1>
         {{/if}}
-      </div>
+      </div> --}}
 
       <div class="company"></div>
 
-      <div role="team-lead" class="is-size-5 pl-5 pt-4">Role: Team Leader</div>
+      <div role="team-lead" class="title is-size-5 mt-3">
+        Role:
+        <span class="is-size-6">Team Leader</span>
+      </div>
 
-      <nav>
-        <ul>
-          <li class="is-size-4 pt-5 pl-5">
-            <a href="/task">Work</a>
-          </li>
-          <li class="is-size-4 pt-5 pl-5">
-            <a href="/paycheck">View Paycheck</a>
-          </li>
-        </ul>
-      </nav>
+      <div class="field is-grouped">
+        <div class="control is-size-4 pl-5">
+          <a href="/task">
+            <button class="button is-dark is-medium">Work</button></a>
+        </div>
 
-      <div class="manage-employees pl-5 pt-4">
+        <div class="control is-size-4 pl-5">
+          <a href="/paycheck">
+            <button class="button is-dark is-medium mb-3">View Paycheck</button></a>
+        </div>
+      </div>
+      <div class="title is-size-5 mt-6">Team:</div>
+      <div class="manage-employees pl-5">
         <table class="user-table table is-bordered is-striped">
           <thred>
             <th>#</th>
@@ -47,6 +49,6 @@
           </tbody>
         </table>
       </div>
-    </div>
+    </section>
   </div>
 </section>
