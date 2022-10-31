@@ -317,7 +317,9 @@ router.get("/paycheck", (req, res) => {
       // custom field - total minutes
       [
         sequelize.literal(
-          `(SELECT sum(minutes_worked) as total_minutes FROM timelog WHERE timelog.employee_id = ${req.session.employee_id} GROUP BY timelog.employee_id)`
+          "(SELECT sum(minutes_worked) as total_minutes FROM timelog WHERE timelog.employee_id = " +
+            req.session.employee_id +
+            " GROUP BY timelog.employee_id)"
         ),
         "total_minutes",
       ],
