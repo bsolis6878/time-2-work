@@ -1,9 +1,8 @@
-<section class="has-background-info-light"></section>
 <section
   class="hero is-fullheight-with-navbar has-background-grey-lighter px-5 py-5"
 >
-  <div class="columns">
-    <div class="column is-half">
+  <div class="hero-body is-align-items-stretch">
+    <form class="role-form">
 
       <div class="title is-size-5 mt-3">Fill in and submit to Add Roles</div>
 
@@ -11,13 +10,15 @@
         <div class="field">
           <label class="label" for="company-choice">Company Name:</label>
           <div class="control">
-            <select type="select" id="company-choice">
-              {{#each company}}
-                <option value="{{this.id}}">
-                  {{this.name}}
-                </option>
-              {{/each}}
-            </select>
+            <div class="select">
+              <select type="select" id="company-choice">
+                {{#each company}}
+                  <option value="{{this.id}}">
+                    {{this.name}}
+                  </option>
+                {{/each}}
+              </select>
+            </div>
           </div>
         </div>
 
@@ -42,8 +43,8 @@
           </div>
         </div>
       </div>
-    </div>
+
+    </form>
   </div>
 </section>
-
 <script src="/javascript/role.js"></script>

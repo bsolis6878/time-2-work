@@ -1,80 +1,85 @@
-<section class="has-background-info-light"></section>
 <section
   class="hero is-fullheight-with-navbar has-background-grey-lighter px-5 py-5"
 >
-  <div class="columns">
-    <div class="column is-half">
+  <div class="hero-body is-align-items-stretch">
+    <form class="employee-form">
 
-  <div class="title is-size-5 mt-3">Fill in and submit to Add Employee</div>
+      <div class="title is-size-5 mt-3">Fill in and submit to Add Employee</div>
 
-  <div class="employee-form">
-    <div class="field">
-      <label class="label"for="company-input">Company</label>
-      <div class="control">
-        <input
-          class="input"
-          type="text"
-          placeholder="Enter the company name"
-        />
+      <div class="field">
+        <label class="label" for="company-input">Company</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            id="company-input"
+            readonly
+            value="1"
+          />
+        </div>
       </div>
-    </div>
 
-    <div class="field">
-      <label class="label" for="roleID-input">Role</label>
-      <div class="control has-icons-left has-icons-right">
-        <input
-          class="input"
-          type="text"
-          placeholder="Please enter a role"
-          value=""
-        />
-        <span class="icon is-small is-left">
-          <i class="fas fa-user"></i>
-        </span>
+      <div class="field">
+        <label class="label" for="roleID-input">Role (1 = Employeer 2 = Team
+          Leader 3 = Employee)</label>
+        <div class="control has-icons-left">
+          <input
+            class="input"
+            type="text"
+            placeholder="3"
+            value=""
+            id="roleID-input"
+          />
+          <span class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+          </span>
+        </div>
       </div>
-    </div>
 
-    <div class="field">
-      <label class="label" for="manager-input">Manager</label>
-      <div class="control has-icons-left has-icons-right">
-        <input
-          class="input"
-          type="text"
-          placeholder="Please enter a manager"
-          value=""
-        />
-        <span class="icon is-small is-left">
-          <i class="fas fa-user"></i>
-        </span>
+      <div class="field">
+        <label class="label" for="manager-input">Manager</label>
+        <div class="control has-icons-left">
+          <input
+            class="input"
+            type="text"
+            placeholder="Type 1 for Employeer"
+            value=""
+            id="manager-input"
+          />
+          <span class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+          </span>
+        </div>
       </div>
-    </div>
 
-    <div class="field">
-      <label class="label" for="userID-input">User</label>
-      <div class="control has-icons-left has-icons-right">
-        <input
-          class="input"
-          type="password"
-          placeholder="Please enter a user"
-          value=""
-        />
-        <span class="icon is-small is-left">
-          <i class="fas fa-user"></i>
-        </span>
+      <div class="field">
+        <label class="label" for="userID-input">User</label>
+        <div class="control has-icons-left">
+          <div class="select">
+            <select id="userID-input">
+              {{#each users}}
+                <option value="{{this.id}}">
+                  {{this.name}}
+                </option>
+              {{/each}}
+            </select>
+          </div>
+          <div class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+          </div>
+        </div>
       </div>
-    </div>
 
-
-    <div class="field is-grouped my-5">
-      <div class="control">
-        <button class="button is-dark">Submit</button>
+      <div class="field is-grouped my-5">
+        <div class="control">
+          <button class="button is-dark">Submit</button>
+        </div>
+        <div class="control">
+          <button class="button is-light">Cancel</button>
+        </div>
       </div>
-      <div class="control">
-        <button class="button is-light">Cancel</button>
-      </div>
-    </div>
+    </form>
   </div>
 </section>
-
 
 <script src="/javascript/employee.js"></script>

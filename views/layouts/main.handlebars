@@ -1,77 +1,117 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet">
-  <title>Time 2 Work</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link rel="stylesheet" href="/stylesheets/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
-<script src="https://kit.fontawesome.com/ac88cc62aa.js" crossorigin="anonymous"></script>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" />
+    <title>Time 2 Work</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/ac88cc62aa.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body class="has-navbar-fixed-top">
-  <nav class="navbar has-background-info-light is-fixed-top" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="/">
-    <h1 class="is-size-2 pl-4 is-size-4-mobile">Time 2 Work</h1>
-    </a>
+  <body>
+    <nav
+      class="navbar has-text-white-bis is-fixed-top"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <h1 class="is-size-2 pl-4 is-size-4-mobile">Time 2 Work</h1>
+        </a>
 
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
 
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-  
-    </div>
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
 
-    <div class="navbar-end">
-      <a href="/" class="navbar-item">
-        <span class="icon-text">
-  <span class="icon">
-    <i class="fas fa-home"></i>
-  </span>
-  <span>Home</span>
-</span></a>
-      </a>
-      {{#if loggedIn}}
-    
-       <button id="logout" class="button is-black">logout</button>
-       {{else}}
-      <div class="navbar-item">
-        <div class="buttons">
-          <a href="/signup" class="button is-dark">
-            <strong>Sign up</strong> </a>
+        </div>
+
+        <div class="navbar-end">
+          {{#if loggedIn}}
+            <a href="/" class="navbar-item">
+              <span class="icon-text">
+                <span class="icon">
+                  <i class="fas fa-user"></i>
+                </span>
+                <span>
+                  Hello
+                  {{name}}
+                </span>
+              </span>
+            </a>
+          {{/if}}
+          <a href="/" class="navbar-item">
+            <span class="icon-text">
+              <span class="icon">
+                <i class="fas fa-home"></i>
+              </span>
+              <span>
+                Home
+              </span>
+            </span>
           </a>
-          <a href="/login" class="button is-dark">
-            Log in </a>
-          </a>
+          {{#if loggedIn}}
+            <div class="navbar-item">
+              <div id="logout" class="buttons">
+                <a href="#" class="button is-dark">
+                  Logout</a>
+              </div>
+            </div>
+          {{else}}
+            <div class="navbar-item">
+              <div class="buttons">
+                <a href="/signup" class="button is-dark">
+                  <strong>Sign up</strong>
+                </a>
+
+                <a href="/login" class="button is-dark">
+                  Log in
+                </a>
+              </div>
+            </div>
           {{/if}}
         </div>
       </div>
-    </div>
-  </div>
-</nav>
+    </nav>
     <main>
-      {{{ body }}}
+      {{{body}}}
     </main>
-    <footer class="is-size-7-mobile">
-      <span class="pl-5">
-      Welcome To <b>Time 2 Work</b> - Enjoy Your Stay!</span>
+    <footer class="pl-5 py-2">
+      <span class="">
+        Welcome To
+        <b>Time 2 Work</b>
+        - Enjoy Your Stay!</span>
     </footer>
-  
-  {{#if loggedIn}}
-  <script src="/javascript/logout.js"></script>
-  {{/if}}
-  <script src="/javascript/script.js"></script>
-</body>
+
+    {{#if loggedIn}}
+      <script src="/javascript/logout.js"></script>
+    {{/if}}
+    <script src="/javascript/script.js"></script>
+  </body>
 
 </html>

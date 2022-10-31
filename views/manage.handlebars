@@ -1,84 +1,77 @@
-<section class="has-background-info-light"></section>
 <section
-  class="hero hero-tile is-fullheight-with-navbar has-background-grey-lighter px-5 py-5"
+  class="hero is-fullheight-with-navbar has-background-grey-lighter px-5 py-5"
 >
-  <div class="columns">
-    <div class="column is-centered">
+  <div class="hero-body">
+    <div class="columns is-multiline is-mobile">
 
       {{#each user}}
-        <div class="card my-5">
-          <header class="card-header">
-            <p class="card-header-title">
-              #
-              {{this.id}}
-              -
-              {{this.name}}
-            </p>
-          </header>
-          <div class="card-content py-4">
-            <div class="content">
-              <div class="columns">
-                <div class="column py-2">
-                  <h4 class="is-size-6 mb-0">Username:</h4>
-                  <p class="">{{this.username}}</h4>
-                </div>
-                <div class="column py-2">
-                  <h4 class="is-size-6 mb-0">Email Address:</h4>
-                  <p class="">{{this.email}}</h4>
-                </div>
-                <div class="column py-2">
-                  <h4 class="is-size-6 mb-0">Phone Number:</h4>
-                  <p class="">{{this.phone_number}}</h4>
+        <div class="column">
+          <div class="card my-5">
+            <header class="card-header is-justify-content-space-between">
+              <div class="container">
+                <p class="card-header-title">
+                  #
+                  {{this.user.id}}
+                  -
+                  {{this.user.name}}
+                </p>
+              </div>
+              <div class="container">
+                <p class="card-header-title is-justify-content-right">
+                  Role:
+                  {{this.role.role_name}}
+                </p>
+              </div>
+            </header>
+            <div class="card-content py-4">
+              {{! first row }}
+              <div class="content">
+                <h4 class="is-size-6 mb-0">Company:</h4>
+                {{this.company.name}}
+              </div>
+
+              {{! second row }}
+              <div class="content">
+                <div class="columns">
+                  <div class="column py-2">
+                    <h4 class="is-size-6 mb-0">Username:</h4>
+                    <p class="">{{this.user.username}}</p>
+                  </div>
+                  <div class="column py-2">
+                    <h4 class="is-size-6 mb-0">Email Address:</h4>
+                    <p class="">{{this.user.email}}</p>
+                  </div>
+                  <div class="column py-2">
+                    <h4 class="is-size-6 mb-0">Phone Number:</h4>
+                    <p class="">{{this.user.phone_number}}</p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="content">
-              <h4 class="is-size-6 mb-0">Address:</h4>
-              {{this.addr1}}
-            </div>
+              {{! third row }}
+              <div class="content">
+                <h4 class="is-size-6 mb-0">Address:</h4>
+                {{this.user.addr1}}
+              </div>
 
+              <div class="content">
+                <h4 class="is-size-6 mb-0">Created At:</h4>
+                <span class="is-size-6">{{this.user.createdAt}}</span>
+                <p class="mb-1"></p>
+                <h4 class="is-size-6 mb-0">Last Updated:</h4>
+                <span class="is-size-6">{{this.user.updatedAt}}</span>
+              </div>
+
+              <div class="content">
+              </div>
+
+            </div>
+            <footer class="card-footer">
+              <a href="edit/{{this.id}}" class="card-footer-item">Edit</a>
+            </footer>
           </div>
-          <footer class="card-footer">
-            <a href="edit/{{this.id}}" class="card-footer-item">Edit</a>
-            {{!-- <a href="/{{this.id}}" class="delete-post-btn card-footer-item">Delete</a> --}}
-          </footer>
         </div>
       {{/each}}
-
-      {{!-- <div class="us-table pl-5 pt-4">
-<table class="user-table table is-bordered is-striped">
-    <thred>
-       <th>#</th>
-       <th>Username</th>
-       <th>Email</th>
-       <th>Name</th>
-       <th>Address</th>
-       <th>Phone</th>
-    </thred>
-
-<tbody>
-{{#each user}}
-<tr>
-    <th>{{this.id}}</th>
-    <td>{{this.username}}</td>
-    <td>{{this.email}}</td>
-    <td>{{this.name}}</td>
-    <td>{{this.addr1}}</td>
-    <td>{{this.phone_number}}</td>
-    <td>
-        <a href="#" type="button">View</a>
-        <a href="edit/{{this.id}}" type="button">Edit</a>
-        <a href="#" type="button">Fire</a>
-    </td>
-</div>
-</tbody>
-{{/each}}
-</tbody>
-</table> --}}
-
     </div>
   </div>
 </section>
-
-  <script src="/javascript/delete.js"></script>

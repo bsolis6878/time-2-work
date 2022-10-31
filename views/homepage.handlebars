@@ -1,38 +1,36 @@
-{{#if loggedIn}}
-<h1>Currently Signed in as: {{name}}</h1>
-<h1>Currently in as: {{role}}</h1>
-<h1>Currently  in as: {{company}}</h1>
-{{#if rid}}
-test yes
-{{else}}
- <a href="setrole" type="button"> SET YOUR ROLE</a>
-{{/if}}
-{{/if}}
-<section class="hero is-link is-fullheight-with-navbar">
+<section class="hero is-fullheight-with-navbar">
+
   <div class="hero-body">
     <div class="columns">
       <div class="column">
-        <p class="title bd-notification is-info has-text-black">
-          Time tracking made simple.</p>
+        <section class="pb-5">
+          {{#if loggedIn}}
+            <h2>Please wait for your Employeer to set your role</h2>
+            <h3>Set your role here
+              <a href="/setrole">"<u>Set role</u>"</a>
+              if you do not have a Employeer yet.</h3>
+          {{/if}}
+        </section>
+        <p
+          class="title bd-notification is-info has-text-black is-size-4-mobile"
+        >
+          Time tracking made simple.
+        </p>
         <div class="columns is-mobile">
           <div class="column is-half">
             <p class="bd-notification is-info">
-              <div class="description has-text-black is-size-6-mobile subtitle">
+              <div class="description has-text-black is-size-7-mobile subtitle">
                 Are you looking for an easy way to track your payroll? Look no
                 futher, whether you are a small business, entrepreneur, or even
                 a big time company. We've got the software you need. You can
                 track, manage, and even pay your employees just from here!
 
-              </div></p>
+              </div>
+            </p>
           </div>
         </div>
       </div>
     </div>
-
   </div>
-<div class="signed-in">
-
-
-
-
-
+</section>
+<div class="signed-in"></div>

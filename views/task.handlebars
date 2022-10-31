@@ -1,47 +1,73 @@
-<section class="has-background-info-light"></section>
 <section
   class="hero is-fullheight-with-navbar has-background-grey-lighter px-5 py-5"
 >
-  <div class="columns">
-    <div class="column is-half">
-
-      <div class="signed-in">
-        {{#if loggedIn}}
-          <h1>Currently Signed in as: {{name}}</h1>
-        {{/if}}
-      </div>
-      <div class="jobs-form is-size-6-mobile is-size-5 mt-3">
-        <h1>Jobs you completed today</h1>
-        <div>
-          <label for="company_id" class="label">Company ID:</label>
+  <div class="hero-body is-align-items-stretch">
+    <form class="jobs-form is-size-6-mobile">
+      {{!-- <div class="signed-in">
+          {{#if loggedIn}}
+            <h1>Currently Signed in as: {{name}}</h1>
+          {{/if}}
+        </div> --}}
+      <div class="jobs-form is-size-6-mobile pt-5">
+        <div class="title is-size-5 mt-3">Enter the Job(s) completed today</div>
+        <div class="field">
+          <label class="label" for="company_id">Company ID:</label>
           <div class="control">
-            <input type="text" id="company_id" readonly value="{{cid}}" />
+            <input
+              class="input"
+              type="text"
+              id="company_id"
+              readonly
+              value="{{cid}}"
+            />
           </div>
         </div>
-        <div>
-          <label for="employee_id" class="label">Employee ID:</label>
-          <input type="text" id="employee_id" readonly value="{{eid}}" />
-        </div>
-        <div>
-          <label for="job-id" class="label">Job Worked</label>
-          <select class="job-id" type="select" id="job-id">
-            {{#each job}}
-              <option data-id="{{this.id}}" value="{{this.id}}">
-                {{this.job}}
-              </option>
-            {{/each}}
-          </select>
-        </div>
-        <div>
-          <label for="minutes-worked">Minutes Worked:</label>
-          <input type="text" id="minutes-worked" />
-        </div>
-        <div>
-          <button type="submit" class="button is-dark">Submit</button></div>
-
       </div>
-    </div>
-  </div>
-</section>
+      <div class="field">
+        <label class="label" for="employee_id">Employee ID:</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            id="employee_id"
+            readonly
+            value="{{eid}}"
+          />
+        </div>
+      </div>
 
+      <div>
+        <div class="field">
+          <label class="label" for="job-id">Job Worked</label>
+          <div class="control">
+            <div class="select">
+              <select class="job-id" type="select" id="job-id">
+                {{#each job}}
+                  <option data-id="{{this.id}}" value="{{this.id}}">
+                    {{this.job}}
+                  </option>
+                {{/each}}
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field mt-3">
+        <label class="label" for="minutes-worked">Minutes Worked:</label>
+        <div class="control">
+          <input class="input" type="text" id="minutes-worked" />
+        </div>
+      </div>
+
+      <div class="field is-grouped my-5">
+        <div class="control">
+          <button type="submit" class="button is-dark">Submit</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+</section>
 <script src="/javascript/hours.js"></script>

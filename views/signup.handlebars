@@ -1,10 +1,9 @@
-<section class="has-background-info-light"></section>
 <section
   class="hero is-fullheight-with-navbar has-background-grey-lighter px-5 py-5"
 >
-  <div class="columns">
-    <div class="column is-half">
+  <div class="hero-body is-align-items-stretch">
 
+    <form class="signup-form">
       <div class="title is-size-5 mt-3">Fill in and submit to sign-up</div>
 
       <div class="field">
@@ -14,18 +13,20 @@
             class="input"
             type="text"
             placeholder="Please enter your full name"
+            id="name-signup"
           />
         </div>
       </div>
 
       <div class="field">
         <label class="label">Username</label>
-        <div class="control has-icons-left has-icons-right">
+        <div class="control has-icons-left">
           <input
             class="input"
             type="text"
             placeholder="Please enter a username"
             value=""
+            id="username-signup"
           />
           <span class="icon is-small is-left">
             <i class="fas fa-user"></i>
@@ -41,21 +42,26 @@
             type="password"
             placeholder="Please enter a password"
             value=""
+            id="password-signup"
           />
           <span class="icon is-small is-left">
             <i class="fas fa-lock"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i id="eye-toggle" class="fas fa-eye"></i>
           </span>
         </div>
       </div>
 
       <div class="field">
         <label class="label">Email</label>
-        <div class="control has-icons-left has-icons-right">
+        <div class="control has-icons-left">
           <input
             class="input"
             type="email"
             placeholder="hello@time2work.com"
             value=""
+            id="email-signup"
           />
           <span class="icon is-small is-left">
             <i class="fas fa-envelope"></i>
@@ -65,12 +71,13 @@
 
       <div class="field">
         <label class="label">Address</label>
-        <div class="control has-icons-left has-icons-right">
+        <div class="control has-icons-left">
           <input
             class="input"
             type="text"
             placeholder="1234 Happy Circle, Happyville CA 12345"
             value=""
+            id="address-signup"
           />
           <span class="icon is-small is-left">
             <i class="fa-solid fa-location-dot"></i>
@@ -80,12 +87,13 @@
 
       <div class="field">
         <label class="label">Phone Number</label>
-        <div class="control has-icons-left has-icons-right">
+        <div class="control has-icons-left">
           <input
             class="input"
             type="tel"
             placeholder="(555)555-5555"
             value=""
+            id="phone-signup"
           />
           <span class="icon is-small is-left">
             <i class="fa-solid fa-phone"></i>
@@ -95,8 +103,14 @@
 
       <div class="field">
         <label class="label">Tax-ID (SSN/EIN)</label>
-        <div class="control has-icons-left has-icons-right">
-          <input class="input" type="text" placeholder="9999999999" value="" />
+        <div class="control has-icons-left">
+          <input
+            class="input"
+            type="text"
+            placeholder="9999999999"
+            value=""
+            id="tax-signup"
+          />
           <span class="icon is-small is-left">
             <i class="fa-solid fa-fingerprint"></i>
           </span>
@@ -105,15 +119,38 @@
 
       <div class="field is-grouped my-5">
         <div class="control">
-          <button class="button is-dark">Submit</button>
+          <button class=".signup-form button is-dark">Submit</button>
         </div>
         <div class="control">
           <button class="button is-light">Cancel</button>
         </div>
       </div>
 
-    </div>
+    </form>
   </div>
 </section>
+
+{{! Modal alert }}
+<div class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">
+
+        </p>
+      </header>
+      <section class="modal-card-body is-size-4">
+      </section>
+      <!-- Any other Bulma elements you want -->
+
+      <footer class="modal-card-foot">
+        <button class="button modalButton">
+        </button>
+      </footer>
+    </div>
+  </div>
+</div>
+{{! End Modal alert }}
 
 <script src="/javascript/create.js"></script>

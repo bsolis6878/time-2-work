@@ -1,35 +1,23 @@
-<section class="has-background-info-light"></section>
 <section
   class="hero is-fullheight-with-navbar has-background-grey-lighter px-5 py-5"
 >
-
-  <div class="signed-in">
-    {{#if loggedIn}}
-      <h1>Current Signed in as: {{name}}</h1>
-    {{/if}}
-  </div>
-
-  <div class="columns">
-    <div class="column is-half">
-      <div class="title is-size-5"></div>
+  <div class="hero-body is-align-items-stretch">
+    <section>
 
       <div class="company"></div>
+      <div class="title employee is-size-4" role="employee">Role:
+        <span class="is-size-6">Employee</span></div>
 
-      <div class="ml-5 employee is-size-3" role="employee">Role:
-        <span class="is-size-4">Employee</span></div>
-      <nav>
-        <ul>
-          <li class="is-size-4 pt-5 pl-5">
-            <a href="/task"><button
-                class="button is-dark is-large"
-              >Work</button></a>
-          </li>
-          <li class="is-size-4 pt-5 pl-5">
-            <a href="/paycheck"><button class="button is-dark is-large">View
-                Paycheck</button></a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+      <div class="title is-size-5 mt-3 mb-1">Select:</div>
+      <div class="is-size-4 pb-2">
+        <a href="/task"><button
+            class="button is-dark is-large"
+          >Work</button></a>
+      </div>
+      <div class="is-size-4 pb-5">
+        <a href="/paycheck"><button class="button is-dark is-large">View
+            Paycheck</button></a>
+      </div>
+    </section>
   </div>
 </section>

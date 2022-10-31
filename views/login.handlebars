@@ -1,18 +1,21 @@
-<section class="has-background-info-light"></section>
 <section
   class="hero is-fullheight-with-navbar has-background-grey-lighter px-5 py-5"
 >
-  <div class="columns">
-    <div class="column is-half">
-      <div class="title is-size-5 mt-3">Login:</div>
+  <div class="hero-body is-align-items-stretch">
+
+    <form class="login-form">
+      <div class="title is-size-5 mt-4">
+        Login:
+      </div>
       <div class="field">
-        <label class="label">Username</label>
+        <label class="label">Email</label>
         <div class="control has-icons-left">
           <input
             class="input"
             type="text"
-            placeholder="Please enter a username"
+            placeholder="Enter email"
             value=""
+            id="email-login"
           />
           <span class="icon is-small is-left">
             <i class="fas fa-user"></i>
@@ -22,34 +25,52 @@
 
       <div class="field">
         <label class="label">Password</label>
-        <div class="control has-icons-left">
+        <div class="control has-icons-left has-icons-right">
           <input
             class="input"
             type="password"
-            placeholder="Please enter your password"
+            placeholder="Enter password"
             value=""
+            id="password-login"
           />
           <span class="icon is-small is-left">
             <i class="fas fa-lock"></i>
           </span>
-          {{! <span class="icon is-small is-right">
-      <i class="fas fa-exclamation-triangle"></i>
-    </span>
-  </div>
-  <p class="passworderror help is-danger">This email is invalid</p> }}
+          <span class="icon is-small is-right">
+            <i id="eye-toggle" class="fas fa-eye"></i>
+          </span>
         </div>
       </div>
 
-          <div class="field is-grouped my-5">
-            <div class="control">
-              <button class="button is-dark">Submit</button>
-            </div>
-
-          </div>
+      <div class="field is-grouped my-5">
+        <div class="control">
+          <button class="button is-dark">Submit</button>
         </div>
       </div>
-    </div>
+    </form>
   </div>
 </section>
 
+{{! Modal alert }}
+<div class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">
+
+        </p>
+      </header>
+      <section class="modal-card-body is-size-4">
+      </section>
+      <!-- Any other Bulma elements you want -->
+
+      <footer class="modal-card-foot">
+        <button class="button modalButton">
+        </button>
+      </footer>
+    </div>
+  </div>
+</div>
+{{! End Modal alert }}
 <script src="/javascript/login.js"></script>

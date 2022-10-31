@@ -1,99 +1,78 @@
-<section class="has-background-info-light"></section>
 <section
   class="hero is-fullheight-with-navbar has-background-grey-lighter px-5 py-5"
 >
-  <div class="columns">
-    <div class="column is-half">
+  <div class="hero-body is-align-items-stretch">
+    <form>
+      <div class="title is-size-5 mt-3">Fill in and submit to Add Company</div>
 
-  <div class="title is-size-5 mt-3">Fill in and submit to Add Company</div>
+      <div class="company-form">
+        <div class="field">
+          <label class="label" for="companyName-select">Company Name</label>
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              placeholder="Enter your company name"
+            />
+          </div>
+        </div>
 
-  <div class="company-form">
-    <div class="field">
-      <label class="label"for="companyName-select">Company Name</label>
-        <div class="control">
-          <input
-        class="input"
-        type="text"
-        placeholder="Enter your company name"
-      />
-    </div>
-  </div>
+        <div class="field">
+          <label class="label" for="companyTax-input">Company Tax ID</label>
+          <div class="control has-icons-left has-icons-right">
+            <input
+              class="input"
+              type="email"
+              placeholder="1234566789"
+              value=""
+            />
+            <span class="icon is-small is-left">
+              <i class="fa-solid fa-fingerprint"></i>
+            </span>
+          </div>
+        </div>
 
-  <div class="field">
-    <label class="label"for="companyTax-input">Company Tax ID</label>
-    <div class="control has-icons-left has-icons-right">
-      <input
-        class="input"
-        type="email"
-        placeholder="1234566789"
-        value=""
-      />
-          <span class="icon is-small is-left">
-            <i class="fa-solid fa-fingerprint"></i>
-          </span>
-    </div>
-  </div>
+        <div class="field">
+          <label class="label" for="addressCompany-input">Company Address</label>
+          <div class="control has-icons-left has-icons-right">
+            <input
+              class="input"
+              type="text"
+              placeholder="1234 Happy Circle, Happyville CA 12345"
+              value=""
+            />
+            <span class="icon is-small is-left">
+              <i class="fa-solid fa-location-dot"></i>
+            </span>
+          </div>
+        </div>
 
-  <div class="field">
-    <label class="label"for="addressCompany-input">Company Address</label>
-    <div class="control has-icons-left has-icons-right">
-      <input
-        class="input"
-        type="text"
-        placeholder="1234 Happy Circle, Happyville CA 12345"
-        value=""
-      />
-          <span class="icon is-small is-left">
-            <i class="fa-solid fa-location-dot"></i>
-          </span>
-    </div>
-  </div>
+        <div class="field">
+          <label class="label" for="companyNumber-input">Company Number</label>
+          <div class="control has-icons-left has-icons-right">
+            <input
+              class="input"
+              type="tel"
+              placeholder="(555)555-5555"
+              value=""
+            />
+            <span class="icon is-small is-left">
+              <i class="fa-solid fa-phone"></i>
+            </span>
+          </div>
+        </div>
 
-  <div class="field">
-    <label class="label"for="companyNumber-input">Company Number</label>
-    <div class="control has-icons-left has-icons-right">
-      <input class="input" type="tel" placeholder="(555)555-5555" value="" />
-          <span class="icon is-small is-left">
-            <i class="fa-solid fa-phone"></i>
-          </span>
-    </div>
-  </div>
-
-
-
-
-  <div class="field">
-    <label class="label">Please select the company:</label>
-    <div class="control">
-      <div class="select is-dark">
-        <select>
-          <option>ABC COMPANY</option>
-          <option>WE DELIVER</option>
-          <option>HELPING HAND</option>
-        </select>
+        <div class="field is-grouped my-5">
+          <div class="control">
+            <button class="button is-dark">Submit</button>
+          </div>
+          <div class="control">
+            <button class="button is-light">Cancel</button>
+          </div>
+        </div>
       </div>
-    </div>
+    </form>
   </div>
-
-  <div class="field is-grouped my-5">
-    <div class="control">
-      <button class="button is-dark">Submit</button>
-    </div>
-    <div class="control">
-      <button class="button is-light">Cancel</button>
-    </div>
-  </div>
-  </div>  
-</div>  
 </section>
-  
-
-
-
-
-
-
-
-
 
 <script src="/javascript/company.js"></script>
